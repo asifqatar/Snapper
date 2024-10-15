@@ -28,4 +28,4 @@ The path to the temporary directory.
 
 ## Defined in
 
-[utils/commandUtils.ts:11](https://github.com/asifqatar/Snapper/blob/10d8c215d2a9fa01e8560a55968929911c581044/utils/commandUtils.ts#L11)
+[utils/commandUtils.ts:11](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/utils/commandUtils.ts#L11)

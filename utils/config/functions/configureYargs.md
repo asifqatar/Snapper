@@ -42,4 +42,4 @@ Configures command-line arguments using yargs.
 
 ## Defined in
 
-[utils/config.ts:9](https://github.com/asifqatar/Snapper/blob/10d8c215d2a9fa01e8560a55968929911c581044/utils/config.ts#L9)
+[utils/config.ts:9](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/utils/config.ts#L9)

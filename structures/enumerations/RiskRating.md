@@ -16,7 +16,7 @@ Enum representing the risk rating of a finding.
 
 #### Defined in
 
-[structures/index.ts:9](https://github.com/asifqatar/Snapper/blob/10d8c215d2a9fa01e8560a55968929911c581044/structures/index.ts#L9)
+[structures/index.ts:9](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/structures/index.ts#L9)
 
 ***
 
@@ -26,7 +26,7 @@ Enum representing the risk rating of a finding.
 
 #### Defined in
 
-[structures/index.ts:8](https://github.com/asifqatar/Snapper/blob/10d8c215d2a9fa01e8560a55968929911c581044/structures/index.ts#L8)
+[structures/index.ts:8](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/structures/index.ts#L8)
 
 ***
 
@@ -36,7 +36,7 @@ Enum representing the risk rating of a finding.
 
 #### Defined in
 
-[structures/index.ts:5](https://github.com/asifqatar/Snapper/blob/10d8c215d2a9fa01e8560a55968929911c581044/structures/index.ts#L5)
+[structures/index.ts:5](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/structures/index.ts#L5)
 
 ***
 
@@ -46,7 +46,7 @@ Enum representing the risk rating of a finding.
 
 #### Defined in
 
-[structures/index.ts:6](https://github.com/asifqatar/Snapper/blob/10d8c215d2a9fa01e8560a55968929911c581044/structures/index.ts#L6)
+[structures/index.ts:6](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/structures/index.ts#L6)
 
 ***
 
@@ -56,4 +56,4 @@ Enum representing the risk rating of a finding.
 
 #### Defined in
 
-[structures/index.ts:7](https://github.com/asifqatar/Snapper/blob/10d8c215d2a9fa01e8560a55968929911c581044/structures/index.ts#L7)
+[structures/index.ts:7](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/structures/index.ts#L7)

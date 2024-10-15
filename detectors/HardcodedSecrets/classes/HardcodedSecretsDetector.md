@@ -26,7 +26,7 @@
 
 #### Defined in
 
-[detectors/HardcodedSecrets.ts:28](https://github.com/asifqatar/Snapper/blob/10d8c215d2a9fa01e8560a55968929911c581044/detectors/HardcodedSecrets.ts#L28)
+[detectors/HardcodedSecrets.ts:28](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/HardcodedSecrets.ts#L28)
 
 ## Properties
 
@@ -40,7 +40,7 @@
 
 #### Defined in
 
-[detectors/DetectorBase.ts:11](https://github.com/asifqatar/Snapper/blob/10d8c215d2a9fa01e8560a55968929911c581044/detectors/DetectorBase.ts#L11)
+[detectors/DetectorBase.ts:11](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/DetectorBase.ts#L11)
 
 ***
 
@@ -54,7 +54,7 @@
 
 #### Defined in
 
-[detectors/DetectorBase.ts:9](https://github.com/asifqatar/Snapper/blob/10d8c215d2a9fa01e8560a55968929911c581044/detectors/DetectorBase.ts#L9)
+[detectors/DetectorBase.ts:9](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/DetectorBase.ts#L9)
 
 ***
 
@@ -68,7 +68,7 @@
 
 #### Defined in
 
-[detectors/DetectorBase.ts:10](https://github.com/asifqatar/Snapper/blob/10d8c215d2a9fa01e8560a55968929911c581044/detectors/DetectorBase.ts#L10)
+[detectors/DetectorBase.ts:10](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/DetectorBase.ts#L10)
 
 ## Methods
 
@@ -102,7 +102,7 @@ Line number where the finding was detected (default is 1).
 
 #### Defined in
 
-[detectors/DetectorBase.ts:27](https://github.com/asifqatar/Snapper/blob/10d8c215d2a9fa01e8560a55968929911c581044/detectors/DetectorBase.ts#L27)
+[detectors/DetectorBase.ts:27](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/DetectorBase.ts#L27)
 
 ***
 
@@ -122,7 +122,7 @@ Clears the findings.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:44](https://github.com/asifqatar/Snapper/blob/10d8c215d2a9fa01e8560a55968929911c581044/detectors/DetectorBase.ts#L44)
+[detectors/DetectorBase.ts:44](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/DetectorBase.ts#L44)
 
 ***
 
@@ -140,7 +140,7 @@ Clears the findings.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:52](https://github.com/asifqatar/Snapper/blob/10d8c215d2a9fa01e8560a55968929911c581044/detectors/DetectorBase.ts#L52)
+[detectors/DetectorBase.ts:52](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/DetectorBase.ts#L52)
 
 ***
 
@@ -158,7 +158,7 @@ Clears the findings.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:48](https://github.com/asifqatar/Snapper/blob/10d8c215d2a9fa01e8560a55968929911c581044/detectors/DetectorBase.ts#L48)
+[detectors/DetectorBase.ts:48](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/DetectorBase.ts#L48)
 
 ***
 
@@ -184,7 +184,7 @@ The message to log.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:68](https://github.com/asifqatar/Snapper/blob/10d8c215d2a9fa01e8560a55968929911c581044/detectors/DetectorBase.ts#L68)
+[detectors/DetectorBase.ts:68](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/DetectorBase.ts#L68)
 
 ***
 
@@ -214,7 +214,7 @@ Optional error object to log.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:77](https://github.com/asifqatar/Snapper/blob/10d8c215d2a9fa01e8560a55968929911c581044/detectors/DetectorBase.ts#L77)
+[detectors/DetectorBase.ts:77](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/DetectorBase.ts#L77)
 
 ***
 
@@ -240,7 +240,7 @@ The message to log.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:60](https://github.com/asifqatar/Snapper/blob/10d8c215d2a9fa01e8560a55968929911c581044/detectors/DetectorBase.ts#L60)
+[detectors/DetectorBase.ts:60](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/DetectorBase.ts#L60)
 
 ***
 
@@ -268,4 +268,4 @@ The source file to analyze.
 
 #### Defined in
 
-[detectors/HardcodedSecrets.ts:55](https://github.com/asifqatar/Snapper/blob/10d8c215d2a9fa01e8560a55968929911c581044/detectors/HardcodedSecrets.ts#L55)
+[detectors/HardcodedSecrets.ts:55](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/HardcodedSecrets.ts#L55)

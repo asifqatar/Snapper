@@ -32,4 +32,4 @@ Whether to process projects recursively.
 
 ## Defined in
 
-[processor.ts:43](https://github.com/asifqatar/Snapper/blob/10d8c215d2a9fa01e8560a55968929911c581044/processor.ts#L43)
+[processor.ts:43](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/processor.ts#L43)
