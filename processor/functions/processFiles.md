@@ -6,9 +6,9 @@
 
 # Function: processFiles()
 
-> **processFiles**(`projectPath`, `detectorName`?, `recursive`?): `Promise`\<[`Finding`](../../types/type-aliases/Finding.md)[]\>
+> **processFiles**(`projectPath`, `detectorNames`?): `Promise`\<[`Finding`](../../types/type-aliases/Finding.md)[]\>
 
-Processes files in a TypeScript project to find issues based on specified detector.
+Processes files in a TypeScript project to find issues based on specified detectors.
 
 ## Parameters
 
@@ -16,13 +16,9 @@ Processes files in a TypeScript project to find issues based on specified detect
 
 The path to the TypeScript project.
 
-• **detectorName?**: `string`
+• **detectorNames?**: `string`[]
 
-The specific detector to run. If not provided, all detectors will be applied.
-
-• **recursive?**: `boolean` = `false`
-
-Whether to process projects recursively.
+The list of detectors to run. If not provided, all detectors will be applied.
 
 ## Returns
 
@@ -32,4 +28,4 @@ Whether to process projects recursively.
 
 ## Defined in
 
-[processor.ts:43](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/processor.ts#L43)
+[processor.ts:48](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/processor.ts#L48)

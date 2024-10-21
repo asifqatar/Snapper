@@ -9,6 +9,7 @@
 > **configureYargs**(): `object`
 
 Configures command-line arguments using yargs.
+Only defined options are accepted.
 
 ## Returns
 
@@ -16,9 +17,9 @@ Configures command-line arguments using yargs.
 
 - The parsed command-line arguments.
 
-### detector?
+### detectors?
 
-> `optional` **detector**: `string`
+> `optional` **detectors**: `string`
 
 ### logFile?
 
@@ -32,14 +33,10 @@ Configures command-line arguments using yargs.
 
 > **path**: `string`
 
-### recursive
-
-> **recursive**: `boolean`
-
 ### verbose
 
 > **verbose**: `boolean`
 
 ## Defined in
 
-[utils/config.ts:9](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/utils/config.ts#L9)
+[utils/config.ts:10](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/utils/config.ts#L10)

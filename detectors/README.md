@@ -8,6 +8,12 @@
 
 ## References
 
+### BroadPermissionsDetector
+
+Re-exports [BroadPermissionsDetector](BroadPermissions/classes/BroadPermissionsDetector.md)
+
+***
+
 ### ConsoleLogDetector
 
 Re-exports [ConsoleLogDetector](ConsoleLog/classes/ConsoleLogDetector.md)
@@ -44,15 +50,39 @@ Re-exports [DeprecatedPermissionsDetector](DeprecatedPermissions/classes/Depreca
 
 ***
 
+### DetectorBase
+
+Re-exports [DetectorBase](DetectorBase/classes/DetectorBase.md)
+
+***
+
+### ESLintingDetector
+
+Re-exports [ESLintingDetector](ESLinting/classes/ESLintingDetector.md)
+
+***
+
 ### ExcessiveCommentsDetector
 
 Re-exports [ExcessiveCommentsDetector](ExcessiveComments/classes/ExcessiveCommentsDetector.md)
 
 ***
 
+### FloatingPointPrecisionDetector
+
+Re-exports [FloatingPointPrecisionDetector](FloatingPointPrecision/classes/FloatingPointPrecisionDetector.md)
+
+***
+
 ### HardcodedSecretsDetector
 
 Re-exports [HardcodedSecretsDetector](HardcodedSecrets/classes/HardcodedSecretsDetector.md)
+
+***
+
+### ImproperTypeUsageDetector
+
+Re-exports [ImproperTypeUsageDetector](ImproperTypeUsage/classes/ImproperTypeUsageDetector.md)
 
 ***
 
@@ -83,6 +113,30 @@ Re-exports [LackOfExceptionHandlingDetector](LackOfExceptionHandling/classes/Lac
 ### LeftoverTODOsDetector
 
 Re-exports [LeftoverTODOsDetector](LeftoverTODOs/classes/LeftoverTODOsDetector.md)
+
+***
+
+### MissingExplicitStrictTypeCheckingDetector
+
+Re-exports [MissingExplicitStrictTypeCheckingDetector](MissingExplicitStrictTypeChecking/classes/MissingExplicitStrictTypeCheckingDetector.md)
+
+***
+
+### OriginValidationDetector
+
+Re-exports [OriginValidationDetector](OriginValidation/classes/OriginValidationDetector.md)
+
+***
+
+### PotentialOutdatedEngineDetector
+
+Re-exports [PotentialOutdatedEngineDetector](PotentialOutdatedEngine/classes/PotentialOutdatedEngineDetector.md)
+
+***
+
+### UnhandledPromiseRejectionDetector
+
+Re-exports [UnhandledPromiseRejectionDetector](UnhandledPromiseRejection/classes/UnhandledPromiseRejectionDetector.md)
 
 ***
 

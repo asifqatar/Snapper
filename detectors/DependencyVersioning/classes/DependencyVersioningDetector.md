@@ -7,6 +7,8 @@
 # Class: DependencyVersioningDetector
 
 Class to detect dependencies with non-exact versions in the package.json file.
+Non-exact versions (e.g., versions starting with "^" or "~") allow the installation
+of newer versions of a dependency, which may introduce breaking changes or vulnerabilities.
 
 ## Extends
 
@@ -18,6 +20,9 @@ Class to detect dependencies with non-exact versions in the package.json file.
 
 > **new DependencyVersioningDetector**(): [`DependencyVersioningDetector`](DependencyVersioningDetector.md)
 
+Constructor for the DependencyVersioningDetector.
+Initializes the detector with a name and assigns a medium-risk rating.
+
 #### Returns
 
 [`DependencyVersioningDetector`](DependencyVersioningDetector.md)
@@ -28,9 +33,23 @@ Class to detect dependencies with non-exact versions in the package.json file.
 
 #### Defined in
 
-[detectors/DependencyVersioning.ts:13](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/DependencyVersioning.ts#L13)
+[detectors/DependencyVersioning.ts:21](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DependencyVersioning.ts#L21)
 
 ## Properties
+
+### allowedFileRegexes
+
+> **allowedFileRegexes**: `RegExp`[]
+
+#### Overrides
+
+[`DetectorBase`](../../DetectorBase/classes/DetectorBase.md).[`allowedFileRegexes`](../../DetectorBase/classes/DetectorBase.md#allowedfileregexes)
+
+#### Defined in
+
+[detectors/DependencyVersioning.ts:14](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DependencyVersioning.ts#L14)
+
+***
 
 ### findings
 
@@ -42,7 +61,7 @@ Class to detect dependencies with non-exact versions in the package.json file.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:11](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/DetectorBase.ts#L11)
+[detectors/DetectorBase.ts:16](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DetectorBase.ts#L16)
 
 ***
 
@@ -56,7 +75,7 @@ Class to detect dependencies with non-exact versions in the package.json file.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:9](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/DetectorBase.ts#L9)
+[detectors/DetectorBase.ts:14](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DetectorBase.ts#L14)
 
 ***
 
@@ -70,7 +89,7 @@ Class to detect dependencies with non-exact versions in the package.json file.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:10](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/DetectorBase.ts#L10)
+[detectors/DetectorBase.ts:15](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DetectorBase.ts#L15)
 
 ## Methods
 
@@ -79,6 +98,7 @@ Class to detect dependencies with non-exact versions in the package.json file.
 > **addFinding**(`description`, `filePath`, `lineNum`): `void`
 
 Adds a finding to the findings array.
+This method creates a Finding object and logs a debug message before adding it to the findings list.
 
 #### Parameters
 
@@ -104,7 +124,7 @@ Line number where the finding was detected (default is 1).
 
 #### Defined in
 
-[detectors/DetectorBase.ts:27](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/DetectorBase.ts#L27)
+[detectors/DetectorBase.ts:39](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DetectorBase.ts#L39)
 
 ***
 
@@ -112,7 +132,8 @@ Line number where the finding was detected (default is 1).
 
 > **clearFindings**(): `void`
 
-Clears the findings.
+Clears all findings from the detector.
+This method resets the findings array to an empty state.
 
 #### Returns
 
@@ -124,7 +145,7 @@ Clears the findings.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:44](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/DetectorBase.ts#L44)
+[detectors/DetectorBase.ts:57](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DetectorBase.ts#L57)
 
 ***
 
@@ -132,9 +153,13 @@ Clears the findings.
 
 > **getFindings**(): [`Finding`](../../../types/type-aliases/Finding.md)[]
 
+Retrieves all findings collected by the detector.
+
 #### Returns
 
 [`Finding`](../../../types/type-aliases/Finding.md)[]
+
+- Array of findings.
 
 #### Inherited from
 
@@ -142,7 +167,7 @@ Clears the findings.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:52](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/DetectorBase.ts#L52)
+[detectors/DetectorBase.ts:73](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DetectorBase.ts#L73)
 
 ***
 
@@ -150,9 +175,13 @@ Clears the findings.
 
 > **getName**(): `string`
 
+Gets the name of the detector.
+
 #### Returns
 
 `string`
+
+- The name of the detector.
 
 #### Inherited from
 
@@ -160,7 +189,7 @@ Clears the findings.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:48](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/DetectorBase.ts#L48)
+[detectors/DetectorBase.ts:65](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DetectorBase.ts#L65)
 
 ***
 
@@ -169,6 +198,7 @@ Clears the findings.
 > **logDebug**(`message`): `void`
 
 Logs a debug message.
+This method formats the message with the detector's name and logs it at the debug level.
 
 #### Parameters
 
@@ -186,7 +216,7 @@ The message to log.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:68](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/DetectorBase.ts#L68)
+[detectors/DetectorBase.ts:91](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DetectorBase.ts#L91)
 
 ***
 
@@ -195,6 +225,7 @@ The message to log.
 > **logError**(`message`, `error`?): `void`
 
 Logs an error message.
+This method formats the message with the detector's name and logs it at the error level.
 
 #### Parameters
 
@@ -204,7 +235,7 @@ The message to log.
 
 • **error?**: `Error`
 
-Optional error object to log.
+Optional error object to log alongside the message.
 
 #### Returns
 
@@ -216,7 +247,7 @@ Optional error object to log.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:77](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/DetectorBase.ts#L77)
+[detectors/DetectorBase.ts:101](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DetectorBase.ts#L101)
 
 ***
 
@@ -225,6 +256,7 @@ Optional error object to log.
 > **logInfo**(`message`): `void`
 
 Logs an informational message.
+This method formats the message with the detector's name and logs it at the info level.
 
 #### Parameters
 
@@ -242,7 +274,38 @@ The message to log.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:60](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/DetectorBase.ts#L60)
+[detectors/DetectorBase.ts:82](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DetectorBase.ts#L82)
+
+***
+
+### logWarning()
+
+> **logWarning**(`message`, `error`?): `void`
+
+Logs a warning message.
+This method formats the message with the detector's name and logs it at the warning level.
+
+#### Parameters
+
+• **message**: `string`
+
+The message to log.
+
+• **error?**: `Error`
+
+Optional error object to log alongside the message.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`DetectorBase`](../../DetectorBase/classes/DetectorBase.md).[`logWarning`](../../DetectorBase/classes/DetectorBase.md#logwarning)
+
+#### Defined in
+
+[detectors/DetectorBase.ts:111](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DetectorBase.ts#L111)
 
 ***
 
@@ -250,7 +313,8 @@ The message to log.
 
 > **run**(`sourceFile`): [`Finding`](../../../types/type-aliases/Finding.md)[]
 
-Runs the detector on the given source file.
+Runs the detector on the given source file to identify any non-exact versioning in dependencies.
+This method checks both "dependencies" and "devDependencies" in the package.json file.
 
 #### Parameters
 
@@ -270,4 +334,4 @@ The source file to analyze.
 
 #### Defined in
 
-[detectors/DependencyVersioning.ts:22](https://github.com/asifqatar/Snapper/blob/778fb7895f2095593881f2d22f160dd7157134a7/detectors/DependencyVersioning.ts#L22)
+[detectors/DependencyVersioning.ts:32](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DependencyVersioning.ts#L32)
