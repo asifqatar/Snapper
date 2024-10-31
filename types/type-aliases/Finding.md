@@ -50,4 +50,4 @@ The type of the finding.
 
 ## Defined in
 
-[types/index.d.ts:6](https://github.com/asifqatar/Snapper/blob/455d5a3b3564333db668a614875f645ea24ab595/types/index.d.ts#L6)
+[types/index.d.ts:6](https://github.com/asifqatar/Snapper/blob/9f18c62942b3d333cd7c6e36f4a133723e967397/types/index.d.ts#L6)

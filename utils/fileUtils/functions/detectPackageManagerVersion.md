@@ -29,4 +29,4 @@ Will throw an error if the package manager format is invalid or unsupported.
 
 ## Defined in
 
-[utils/fileUtils.ts:91](https://github.com/asifqatar/Snapper/blob/455d5a3b3564333db668a614875f645ea24ab595/utils/fileUtils.ts#L91)
+[utils/fileUtils.ts:91](https://github.com/asifqatar/Snapper/blob/9f18c62942b3d333cd7c6e36f4a133723e967397/utils/fileUtils.ts#L91)
