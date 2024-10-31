@@ -16,7 +16,7 @@ Enum representing the confidence level of a finding.
 
 #### Defined in
 
-[structures/index.ts:29](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/structures/index.ts#L29)
+[structures/index.ts:29](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/structures/index.ts#L29)
 
 ***
 
@@ -26,7 +26,7 @@ Enum representing the confidence level of a finding.
 
 #### Defined in
 
-[structures/index.ts:27](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/structures/index.ts#L27)
+[structures/index.ts:27](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/structures/index.ts#L27)
 
 ***
 
@@ -36,4 +36,4 @@ Enum representing the confidence level of a finding.
 
 #### Defined in
 
-[structures/index.ts:28](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/structures/index.ts#L28)
+[structures/index.ts:28](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/structures/index.ts#L28)

@@ -26,4 +26,4 @@ The package manager to use.
 
 ## Defined in
 
-[utils/dynamicSnapHelpers.ts:64](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/utils/dynamicSnapHelpers.ts#L64)
+[utils/dynamicSnapHelpers.ts:63](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/utils/dynamicSnapHelpers.ts#L63)

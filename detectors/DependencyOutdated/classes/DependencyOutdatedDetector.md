@@ -32,7 +32,7 @@ Initializes the detector with a name and assigns a medium-risk rating.
 
 #### Defined in
 
-[detectors/DependencyOutdated.ts:38](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DependencyOutdated.ts#L38)
+[detectors/DependencyOutdated.ts:36](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/detectors/DependencyOutdated.ts#L36)
 
 ## Properties
 
@@ -46,7 +46,7 @@ Initializes the detector with a name and assigns a medium-risk rating.
 
 #### Defined in
 
-[detectors/DependencyOutdated.ts:31](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DependencyOutdated.ts#L31)
+[detectors/DependencyOutdated.ts:29](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/detectors/DependencyOutdated.ts#L29)
 
 ***
 
@@ -60,7 +60,7 @@ Initializes the detector with a name and assigns a medium-risk rating.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:16](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DetectorBase.ts#L16)
+[detectors/DetectorBase.ts:16](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/detectors/DetectorBase.ts#L16)
 
 ***
 
@@ -74,7 +74,7 @@ Initializes the detector with a name and assigns a medium-risk rating.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:14](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DetectorBase.ts#L14)
+[detectors/DetectorBase.ts:14](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/detectors/DetectorBase.ts#L14)
 
 ***
 
@@ -88,7 +88,7 @@ Initializes the detector with a name and assigns a medium-risk rating.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:15](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DetectorBase.ts#L15)
+[detectors/DetectorBase.ts:15](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/detectors/DetectorBase.ts#L15)
 
 ## Methods
 
@@ -123,7 +123,7 @@ Line number where the finding was detected (default is 1).
 
 #### Defined in
 
-[detectors/DetectorBase.ts:39](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DetectorBase.ts#L39)
+[detectors/DetectorBase.ts:41](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/detectors/DetectorBase.ts#L41)
 
 ***
 
@@ -144,7 +144,7 @@ This method resets the findings array to an empty state.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:57](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DetectorBase.ts#L57)
+[detectors/DetectorBase.ts:59](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/detectors/DetectorBase.ts#L59)
 
 ***
 
@@ -166,7 +166,7 @@ Retrieves all findings collected by the detector.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:73](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DetectorBase.ts#L73)
+[detectors/DetectorBase.ts:75](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/detectors/DetectorBase.ts#L75)
 
 ***
 
@@ -188,7 +188,7 @@ Gets the name of the detector.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:65](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DetectorBase.ts#L65)
+[detectors/DetectorBase.ts:67](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/detectors/DetectorBase.ts#L67)
 
 ***
 
@@ -215,7 +215,7 @@ The message to log.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:91](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DetectorBase.ts#L91)
+[detectors/DetectorBase.ts:93](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/detectors/DetectorBase.ts#L93)
 
 ***
 
@@ -246,7 +246,7 @@ Optional error object to log alongside the message.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:101](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DetectorBase.ts#L101)
+[detectors/DetectorBase.ts:103](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/detectors/DetectorBase.ts#L103)
 
 ***
 
@@ -273,7 +273,7 @@ The message to log.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:82](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DetectorBase.ts#L82)
+[detectors/DetectorBase.ts:84](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/detectors/DetectorBase.ts#L84)
 
 ***
 
@@ -304,7 +304,7 @@ Optional error object to log alongside the message.
 
 #### Defined in
 
-[detectors/DetectorBase.ts:111](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DetectorBase.ts#L111)
+[detectors/DetectorBase.ts:113](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/detectors/DetectorBase.ts#L113)
 
 ***
 
@@ -313,9 +313,6 @@ Optional error object to log alongside the message.
 > **run**(`sourceFile`): [`Finding`](../../../types/type-aliases/Finding.md)[]
 
 Runs the dependency outdated detector on the given source file.
-This method first verifies that the source file is a package.json file, then
-it creates a temporary directory to copy the project files and runs the audit-ci tool
-to identify any outdated dependencies or vulnerabilities.
 
 #### Parameters
 
@@ -335,4 +332,4 @@ The source file to analyze.
 
 #### Defined in
 
-[detectors/DependencyOutdated.ts:208](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/detectors/DependencyOutdated.ts#L208)
+[detectors/DependencyOutdated.ts:281](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/detectors/DependencyOutdated.ts#L281)

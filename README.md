@@ -52,6 +52,7 @@
 - [detectors/LeftoverTODOs](detectors/LeftoverTODOs/README.md)
 - [detectors/MissingExplicitStrictTypeChecking](detectors/MissingExplicitStrictTypeChecking/README.md)
 - [detectors/OriginValidation](detectors/OriginValidation/README.md)
+- [detectors/OriginValidation-temp](detectors/OriginValidation-temp/README.md)
 - [detectors/PotentialOutdatedEngine](detectors/PotentialOutdatedEngine/README.md)
 - [detectors/UnhandledPromiseRejection](detectors/UnhandledPromiseRejection/README.md)
 - [detectors/UnusedFunctions](detectors/UnusedFunctions/README.md)

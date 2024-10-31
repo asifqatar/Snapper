@@ -2,13 +2,11 @@
 
 ***
 
-[Snapper Project](../../../README.md) / [detectors/UnhandledPromiseRejection](../README.md) / UnhandledPromiseRejectionDetector
+[Snapper Project](../../../README.md) / [detectors/OriginValidation-temp](../README.md) / OriginValidationDetector
 
-# Class: UnhandledPromiseRejectionDetector
+# Class: OriginValidationDetector
 
-Class to detect unhandled promise rejections in asynchronous functions.
-This detector identifies potential issues where catch clauses do not handle errors properly,
-potentially leading to unhandled promise rejections.
+Detector for validating the origin of requests.
 
 ## Extends
 
@@ -16,13 +14,13 @@ potentially leading to unhandled promise rejections.
 
 ## Constructors
 
-### new UnhandledPromiseRejectionDetector()
+### new OriginValidationDetector()
 
-> **new UnhandledPromiseRejectionDetector**(): [`UnhandledPromiseRejectionDetector`](UnhandledPromiseRejectionDetector.md)
+> **new OriginValidationDetector**(): [`OriginValidationDetector`](OriginValidationDetector.md)
 
 #### Returns
 
-[`UnhandledPromiseRejectionDetector`](UnhandledPromiseRejectionDetector.md)
+[`OriginValidationDetector`](OriginValidationDetector.md)
 
 #### Overrides
 
@@ -30,7 +28,7 @@ potentially leading to unhandled promise rejections.
 
 #### Defined in
 
-[detectors/UnhandledPromiseRejection.ts:23](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/detectors/UnhandledPromiseRejection.ts#L23)
+[detectors/OriginValidation-temp.ts:28](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/detectors/OriginValidation-temp.ts#L28)
 
 ## Properties
 
@@ -38,13 +36,13 @@ potentially leading to unhandled promise rejections.
 
 > **allowedFileRegexes**: `RegExp`[]
 
-#### Inherited from
+#### Overrides
 
 [`DetectorBase`](../../DetectorBase/classes/DetectorBase.md).[`allowedFileRegexes`](../../DetectorBase/classes/DetectorBase.md#allowedfileregexes)
 
 #### Defined in
 
-[detectors/DetectorBase.ts:19](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/detectors/DetectorBase.ts#L19)
+[detectors/OriginValidation-temp.ts:26](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/detectors/OriginValidation-temp.ts#L26)
 
 ***
 
@@ -308,24 +306,21 @@ Optional error object to log alongside the message.
 
 ### run()
 
-> **run**(`file`): [`Finding`](../../../types/type-aliases/Finding.md)[]
+> **run**(`sourceFile`): `Promise`\<[`Finding`](../../../types/type-aliases/Finding.md)[]\>
 
-Runs the detector on the given source file to identify empty or ineffective catch blocks.
-
-This method traverses all catch clauses within the source file, checks their contents,
-and logs a finding if it detects any empty catch blocks or blocks that contain only ineffective statements.
+Runs the origin validation detector on the given source file.
 
 #### Parameters
 
-• **file**: `SourceFile`
+• **sourceFile**: `SourceFile`
 
-The source file to analyze for unhandled promise rejections.
+The source file to analyze.
 
 #### Returns
 
-[`Finding`](../../../types/type-aliases/Finding.md)[]
+`Promise`\<[`Finding`](../../../types/type-aliases/Finding.md)[]\>
 
-- An array of findings indicating the locations and reasons for potential issues.
+- Array of findings with details about the detected issues.
 
 #### Overrides
 
@@ -333,4 +328,4 @@ The source file to analyze for unhandled promise rejections.
 
 #### Defined in
 
-[detectors/UnhandledPromiseRejection.ts:36](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/detectors/UnhandledPromiseRejection.ts#L36)
+[detectors/OriginValidation-temp.ts:64](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/detectors/OriginValidation-temp.ts#L64)

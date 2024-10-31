@@ -24,4 +24,4 @@ The path to the temporary directory.
 
 ## Defined in
 
-[utils/dynamicSnapHelpers.ts:34](https://github.com/asifqatar/Snapper/blob/efba3e0c26caea1326a2f907a42f95a875a8ec6a/utils/dynamicSnapHelpers.ts#L34)
+[utils/dynamicSnapHelpers.ts:33](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/utils/dynamicSnapHelpers.ts#L33)
