@@ -29,4 +29,4 @@ Will throw an error if no package.json is found in the working directory.
 
 ## Defined in
 
-[utils/fileUtils.ts:113](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/utils/fileUtils.ts#L113)
+[utils/fileUtils.ts:113](https://github.com/asifqatar/Snapper/blob/455d5a3b3564333db668a614875f645ea24ab595/utils/fileUtils.ts#L113)

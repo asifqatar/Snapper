@@ -26,4 +26,4 @@ The port number to use for the Snap server.
 
 ## Defined in
 
-[utils/dynamicSnapHelpers.ts:44](https://github.com/asifqatar/Snapper/blob/26db3be2155d9435b70ccf05d18d5ef124b513e9/utils/dynamicSnapHelpers.ts#L44)
+[utils/dynamicSnapHelpers.ts:44](https://github.com/asifqatar/Snapper/blob/455d5a3b3564333db668a614875f645ea24ab595/utils/dynamicSnapHelpers.ts#L44)
