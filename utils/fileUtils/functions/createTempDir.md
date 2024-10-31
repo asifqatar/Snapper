@@ -19,4 +19,4 @@ Automatically cleans up the directory when done.
 
 ## Defined in
 
-[utils/fileUtils.ts:13](https://github.com/asifqatar/Snapper/blob/3795ca53873a313eebe131cb0f676920af61e459/utils/fileUtils.ts#L13)
+[utils/fileUtils.ts:13](https://github.com/asifqatar/Snapper/blob/3a30a51eca7209801bd5cb509fba56ba274c267f/utils/fileUtils.ts#L13)
