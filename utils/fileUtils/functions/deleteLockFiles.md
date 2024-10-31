@@ -25,4 +25,4 @@ The main directory where lock files will be deleted.
 
 ## Defined in
 
-[utils/fileUtils.ts:148](https://github.com/asifqatar/Snapper/blob/e1f8d6ee6f0af0f8efc156f53c249f0133517fef/utils/fileUtils.ts#L148)
+[utils/fileUtils.ts:148](https://github.com/asifqatar/Snapper/blob/3795ca53873a313eebe131cb0f676920af61e459/utils/fileUtils.ts#L148)
