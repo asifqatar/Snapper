@@ -28,4 +28,4 @@ The file extension.
 
 ## Defined in
 
-[utils/fileUtils.ts:72](https://github.com/asifqatar/Snapper/blob/9f18c62942b3d333cd7c6e36f4a133723e967397/utils/fileUtils.ts#L72)
+[utils/fileUtils.ts:72](https://github.com/asifqatar/Snapper/blob/376dcdc4b82847ddac5ef66b457745ff3af602df/utils/fileUtils.ts#L72)
