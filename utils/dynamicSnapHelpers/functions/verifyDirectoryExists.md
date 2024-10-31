@@ -26,4 +26,4 @@ If the directory does not exist.
 
 ## Defined in
 
-[utils/dynamicSnapHelpers.ts:22](https://github.com/asifqatar/Snapper/blob/c99fe5e30786c7c5cdc0ee4ffff7662700b21a14/utils/dynamicSnapHelpers.ts#L22)
+[utils/dynamicSnapHelpers.ts:22](https://github.com/asifqatar/Snapper/blob/200cf760c44572384e1d5f1865d1dd34f4214cc9/utils/dynamicSnapHelpers.ts#L22)
