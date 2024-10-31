@@ -18,4 +18,4 @@
 
 ## Defined in
 
-[utils/dynamicSnapHelpers.ts:95](https://github.com/asifqatar/Snapper/blob/200cf760c44572384e1d5f1865d1dd34f4214cc9/utils/dynamicSnapHelpers.ts#L95)
+[utils/dynamicSnapHelpers.ts:95](https://github.com/asifqatar/Snapper/blob/32d01ed0549ed99dd9a5a863882022220d24b166/utils/dynamicSnapHelpers.ts#L95)

@@ -28,4 +28,4 @@ The path to the working directory. If not provided, the current directory is use
 
 ## Defined in
 
-[utils/commandUtils.ts:13](https://github.com/asifqatar/Snapper/blob/200cf760c44572384e1d5f1865d1dd34f4214cc9/utils/commandUtils.ts#L13)
+[utils/commandUtils.ts:13](https://github.com/asifqatar/Snapper/blob/32d01ed0549ed99dd9a5a863882022220d24b166/utils/commandUtils.ts#L13)
