@@ -24,4 +24,4 @@ The Snap instance if connected successfully.
 
 ## Defined in
 
-[utils/dynamicSnapHelpers.ts:109](https://github.com/asifqatar/Snapper/blob/04dd4cb74022d6ed12ffb92f3345b6637821261f/utils/dynamicSnapHelpers.ts#L109)
+[utils/dynamicSnapHelpers.ts:109](https://github.com/asifqatar/Snapper/blob/44e56b041d3dd44e2cdcdfbee0baec5bf6b94efe/utils/dynamicSnapHelpers.ts#L109)
