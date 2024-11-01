@@ -28,4 +28,4 @@ The list of detectors to run. If not provided, all detectors will be applied.
 
 ## Defined in
 
-[processor.ts:48](https://github.com/asifqatar/Snapper/blob/60c9670805823655ee870667c80b7b41d9047cdd/processor.ts#L48)
+[processor.ts:48](https://github.com/asifqatar/Snapper/blob/11e63080dcbedd5648591bc627ccf726ce8a974a/processor.ts#L48)
