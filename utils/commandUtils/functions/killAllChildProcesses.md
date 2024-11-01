@@ -16,4 +16,4 @@ Kills all running child processes.
 
 ## Defined in
 
-[utils/commandUtils.ts:84](https://github.com/asifqatar/Snapper/blob/524778e234341b4bad8b87e16be6f906e9bb6550/utils/commandUtils.ts#L84)
+[utils/commandUtils.ts:84](https://github.com/asifqatar/Snapper/blob/096ee18258520fbba0f2ed3245d87b3fd2b92252/utils/commandUtils.ts#L84)
