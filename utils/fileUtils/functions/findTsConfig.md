@@ -24,4 +24,4 @@ The path to the project directory.
 
 ## Defined in
 
-[utils/fileUtils.ts:24](https://github.com/asifqatar/Snapper/blob/dd05987fb108171c295054bb751bcedff9960df9/utils/fileUtils.ts#L24)
+[utils/fileUtils.ts:24](https://github.com/asifqatar/Snapper/blob/f81e438e9ec4b3b85f8950cdae2512488f5c2cd3/utils/fileUtils.ts#L24)

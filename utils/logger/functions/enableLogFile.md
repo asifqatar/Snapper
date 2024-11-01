@@ -22,4 +22,4 @@ The path to the log file.
 
 ## Defined in
 
-[utils/logger.ts:44](https://github.com/asifqatar/Snapper/blob/dd05987fb108171c295054bb751bcedff9960df9/utils/logger.ts#L44)
+[utils/logger.ts:44](https://github.com/asifqatar/Snapper/blob/f81e438e9ec4b3b85f8950cdae2512488f5c2cd3/utils/logger.ts#L44)
