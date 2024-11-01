@@ -19,4 +19,4 @@ Only defined options are accepted.
 
 ## Defined in
 
-[utils/config.ts:20](https://github.com/asifqatar/Snapper/blob/473061d3a37aa22179e002fb9493d3485123490b/utils/config.ts#L20)
+[utils/config.ts:20](https://github.com/asifqatar/Snapper/blob/4ed0637603a9bb2c551c01da6d6f27d7a47cf56c/utils/config.ts#L20)
