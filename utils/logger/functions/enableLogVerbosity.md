@@ -22,4 +22,4 @@ Flag to enable verbose logging.
 
 ## Defined in
 
-[utils/logger.ts:35](https://github.com/asifqatar/Snapper/blob/e04d576ab1b7734793c658f8cf8fae7baadd17bc/utils/logger.ts#L35)
+[utils/logger.ts:35](https://github.com/asifqatar/Snapper/blob/473061d3a37aa22179e002fb9493d3485123490b/utils/logger.ts#L35)

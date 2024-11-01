@@ -16,7 +16,7 @@ Enum representing impact of a finding.
 
 #### Defined in
 
-[structures/index.ts:20](https://github.com/asifqatar/Snapper/blob/e04d576ab1b7734793c658f8cf8fae7baadd17bc/structures/index.ts#L20)
+[structures/index.ts:20](https://github.com/asifqatar/Snapper/blob/473061d3a37aa22179e002fb9493d3485123490b/structures/index.ts#L20)
 
 ***
 
@@ -26,7 +26,7 @@ Enum representing impact of a finding.
 
 #### Defined in
 
-[structures/index.ts:19](https://github.com/asifqatar/Snapper/blob/e04d576ab1b7734793c658f8cf8fae7baadd17bc/structures/index.ts#L19)
+[structures/index.ts:19](https://github.com/asifqatar/Snapper/blob/473061d3a37aa22179e002fb9493d3485123490b/structures/index.ts#L19)
 
 ***
 
@@ -36,7 +36,7 @@ Enum representing impact of a finding.
 
 #### Defined in
 
-[structures/index.ts:16](https://github.com/asifqatar/Snapper/blob/e04d576ab1b7734793c658f8cf8fae7baadd17bc/structures/index.ts#L16)
+[structures/index.ts:16](https://github.com/asifqatar/Snapper/blob/473061d3a37aa22179e002fb9493d3485123490b/structures/index.ts#L16)
 
 ***
 
@@ -46,7 +46,7 @@ Enum representing impact of a finding.
 
 #### Defined in
 
-[structures/index.ts:17](https://github.com/asifqatar/Snapper/blob/e04d576ab1b7734793c658f8cf8fae7baadd17bc/structures/index.ts#L17)
+[structures/index.ts:17](https://github.com/asifqatar/Snapper/blob/473061d3a37aa22179e002fb9493d3485123490b/structures/index.ts#L17)
 
 ***
 
@@ -56,4 +56,4 @@ Enum representing impact of a finding.
 
 #### Defined in
 
-[structures/index.ts:18](https://github.com/asifqatar/Snapper/blob/e04d576ab1b7734793c658f8cf8fae7baadd17bc/structures/index.ts#L18)
+[structures/index.ts:18](https://github.com/asifqatar/Snapper/blob/473061d3a37aa22179e002fb9493d3485123490b/structures/index.ts#L18)
