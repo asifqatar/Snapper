@@ -10,4 +10,4 @@
 
 ## Defined in
 
-[utils/logger.ts:20](https://github.com/asifqatar/Snapper/blob/4ee80ff7a6a4f17bc8a81bc0c985e656e1d33d4c/utils/logger.ts#L20)
+[utils/logger.ts:20](https://github.com/asifqatar/Snapper/blob/bc90d5c10ba36111873f80ec15201dbb59b10361/utils/logger.ts#L20)
