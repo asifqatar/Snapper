@@ -1,3 +1,9 @@
+---
+layout: default
+title: "deleteLockFiles"
+parent: "functions"
+
+---
 [**Snapper Project**](../../../README.md) • **Docs**
 
 ***
@@ -25,4 +31,4 @@ The main directory where lock files will be deleted.
 
 ## Defined in
 
-[utils/fileUtils.ts:148](https://github.com/asifqatar/Snapper/blob/1b2c230905308cca5785aba7fe39ad09cd146118/utils/fileUtils.ts#L148)
+[utils/fileUtils.ts:148](https://github.com/asifqatar/Snapper/blob/4ab68472556ea30888d864a344a114269175c93f/utils/fileUtils.ts#L148)

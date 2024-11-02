@@ -1,3 +1,9 @@
+---
+layout: default
+title: "killAllChildProcesses"
+parent: "functions"
+
+---
 [**Snapper Project**](../../../README.md) • **Docs**
 
 ***
@@ -16,4 +22,4 @@ Kills all running child processes.
 
 ## Defined in
 
-[utils/commandUtils.ts:84](https://github.com/asifqatar/Snapper/blob/1b2c230905308cca5785aba7fe39ad09cd146118/utils/commandUtils.ts#L84)
+[utils/commandUtils.ts:84](https://github.com/asifqatar/Snapper/blob/4ab68472556ea30888d864a344a114269175c93f/utils/commandUtils.ts#L84)

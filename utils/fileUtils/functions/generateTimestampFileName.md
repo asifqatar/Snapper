@@ -1,3 +1,9 @@
+---
+layout: default
+title: "generateTimestampFileName"
+parent: "functions"
+
+---
 [**Snapper Project**](../../../README.md) • **Docs**
 
 ***
@@ -28,4 +34,4 @@ The file extension.
 
 ## Defined in
 
-[utils/fileUtils.ts:72](https://github.com/asifqatar/Snapper/blob/1b2c230905308cca5785aba7fe39ad09cd146118/utils/fileUtils.ts#L72)
+[utils/fileUtils.ts:72](https://github.com/asifqatar/Snapper/blob/4ab68472556ea30888d864a344a114269175c93f/utils/fileUtils.ts#L72)

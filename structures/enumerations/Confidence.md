@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Confidence"
+parent: "enumerations"
+
+---
 [**Snapper Project**](../../README.md) • **Docs**
 
 ***
@@ -16,7 +22,7 @@ Enum representing the confidence level of a finding.
 
 #### Defined in
 
-[structures/index.ts:29](https://github.com/asifqatar/Snapper/blob/1b2c230905308cca5785aba7fe39ad09cd146118/structures/index.ts#L29)
+[structures/index.ts:29](https://github.com/asifqatar/Snapper/blob/4ab68472556ea30888d864a344a114269175c93f/structures/index.ts#L29)
 
 ***
 
@@ -26,7 +32,7 @@ Enum representing the confidence level of a finding.
 
 #### Defined in
 
-[structures/index.ts:27](https://github.com/asifqatar/Snapper/blob/1b2c230905308cca5785aba7fe39ad09cd146118/structures/index.ts#L27)
+[structures/index.ts:27](https://github.com/asifqatar/Snapper/blob/4ab68472556ea30888d864a344a114269175c93f/structures/index.ts#L27)
 
 ***
 
@@ -36,4 +42,4 @@ Enum representing the confidence level of a finding.
 
 #### Defined in
 
-[structures/index.ts:28](https://github.com/asifqatar/Snapper/blob/1b2c230905308cca5785aba7fe39ad09cd146118/structures/index.ts#L28)
+[structures/index.ts:28](https://github.com/asifqatar/Snapper/blob/4ab68472556ea30888d864a344a114269175c93f/structures/index.ts#L28)
