@@ -1,0 +1,28 @@
+---
+layout: default
+title: "configureYargs"
+parent: "functions"
+
+---
+[**Snapper Project**](../../../README.md) • **Docs**
+
+***
+
+[Snapper Project](../../../README.md) / [utils/config](../README.md) / configureYargs
+
+# Function: configureYargs()
+
+> **configureYargs**(): `CliOptions`
+
+Configures command-line arguments using yargs.
+Only defined options are accepted.
+
+## Returns
+
+`CliOptions`
+
+- The parsed command-line arguments.
+
+## Defined in
+
+[utils/config.ts:20](https://github.com/asifqatar/Snapper/blob/c646fae5068ca622fc62e173a3ef5bac8c95a048/utils/config.ts#L20)
