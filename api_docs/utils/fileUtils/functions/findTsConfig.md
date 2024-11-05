@@ -30,4 +30,4 @@ The path to the project directory.
 
 ## Defined in
 
-[utils/fileUtils.ts:24](https://github.com/asifqatar/Snapper/blob/c646fae5068ca622fc62e173a3ef5bac8c95a048/utils/fileUtils.ts#L24)
+[utils/fileUtils.ts:24](https://github.com/asifqatar/Snapper/blob/86c1eb41f9528d02705503143d7fd9f479592c8a/utils/fileUtils.ts#L24)

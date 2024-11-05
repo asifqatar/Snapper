@@ -32,4 +32,4 @@ The package manager to use.
 
 ## Defined in
 
-[utils/dynamicSnapHelpers.ts:63](https://github.com/asifqatar/Snapper/blob/c646fae5068ca622fc62e173a3ef5bac8c95a048/utils/dynamicSnapHelpers.ts#L63)
+[utils/dynamicSnapHelpers.ts:63](https://github.com/asifqatar/Snapper/blob/86c1eb41f9528d02705503143d7fd9f479592c8a/utils/dynamicSnapHelpers.ts#L63)
