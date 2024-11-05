@@ -16,4 +16,4 @@ parent: "variables"
 
 ## Defined in
 
-[utils/logger.ts:20](https://github.com/asifqatar/Snapper/blob/86c1eb41f9528d02705503143d7fd9f479592c8a/utils/logger.ts#L20)
+[utils/logger.ts:20](https://github.com/asifqatar/Snapper/blob/ab4f57c6fb0f3a6e7a52b57c79197c1a1edc140e/utils/logger.ts#L20)

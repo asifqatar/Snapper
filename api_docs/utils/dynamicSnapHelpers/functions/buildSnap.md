@@ -28,4 +28,4 @@ The directory of the Snap.
 
 ## Defined in
 
-[utils/dynamicSnapHelpers.ts:91](https://github.com/asifqatar/Snapper/blob/86c1eb41f9528d02705503143d7fd9f479592c8a/utils/dynamicSnapHelpers.ts#L91)
+[utils/dynamicSnapHelpers.ts:91](https://github.com/asifqatar/Snapper/blob/ab4f57c6fb0f3a6e7a52b57c79197c1a1edc140e/utils/dynamicSnapHelpers.ts#L91)
