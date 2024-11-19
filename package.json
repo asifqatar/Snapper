@@ -27,6 +27,7 @@
     "@typescript-eslint/eslint-plugin": "^8.15.0",
     "@typescript-eslint/parser": "^8.15.0",
     "eslint": "^9.15.0",
+    "audit-ci": "^7.1.0",
     "eslint-plugin-import": "^2.31.0",
     "fs-extra": "^11.2.0",
     "glob": "^11.0.0",
