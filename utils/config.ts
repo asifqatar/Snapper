@@ -46,11 +46,17 @@ export function configureYargs(): CliOptions {
       },
       detectors: {
         alias: "d",
+<<<<<<< HEAD
         type: "array",
         description: "Specify which detectors to run",
         default: [],
         coerce: (arg: string | string[]) =>
           Array.isArray(arg) ? arg : arg.split(","),
+=======
+        type: "string",
+        description:
+          "Specify which detector to run, specify multiple detectors with a comma",
+>>>>>>> upstream/main
       },
       verbose: {
         alias: "v",
@@ -66,7 +72,13 @@ export function configureYargs(): CliOptions {
       logFile: {
         alias: "l",
         type: "string",
-        description: "Specify log file path",
+        description: "Specify log file",
+      },
+      htmlReport: {
+        alias: "h",
+        type: "boolean",
+        description: "Generate HTML report",
+        default: false,
       },
     })
     .fail((msg, err, yargs) => {
@@ -77,6 +89,18 @@ export function configureYargs(): CliOptions {
       console.log(yargs.help());
       process.exit(1);
     })
+<<<<<<< HEAD
     .help()
     .parseSync() as CliOptions;
 }
+=======
+    .help().argv as unknown as {
+    path: string;
+    detectors?: string;
+    verbose: boolean;
+    output?: string;
+    logFile?: string;
+    htmlReport: boolean;
+  };
+}
+>>>>>>> upstream/main
