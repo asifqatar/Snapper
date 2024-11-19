@@ -1,34 +1,13 @@
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-import fs from "fs";
-import path from "path";
-
-interface CliOptions {
-  path: string;
-  detectors: string[];
-  verbose: boolean;
-  output?: string;
-  logFile?: string;
-}
 
 /**
  * Configures command-line arguments using yargs.
+ * Only defined options are accepted.
  *
- * This function sets up the command-line argument parsing using the `yargs`
- * library. It defines the following options:
- *
- * - `path`: The path to the project directory. This is a required option.
- * - `detectors`: An array of detector names to run. This is an optional option.
- * - `verbose`: A flag to enable verbose logging. This is an optional option.
- * - `output`: The path to the output file. This is an optional option.
- * - `logFile`: The path to the log file. This is an optional option.
- *
- * The function also includes error handling to display a helpful error message
- * if the provided arguments are invalid, and then exits the process.
- *
- * @returns {CliOptions} - The parsed command-line arguments.
+ * @returns {object} - The parsed command-line arguments.
  */
-export function configureYargs(): CliOptions {
+export function configureYargs() {
   return yargs(hideBin(process.argv))
     .strict()
     .options({
@@ -37,12 +16,6 @@ export function configureYargs(): CliOptions {
         type: "string",
         description: "Project path",
         demandOption: true,
-        coerce: (arg: string) => {
-          if (!fs.existsSync(arg) || !fs.statSync(arg).isDirectory()) {
-            throw new Error(`Invalid project path: ${arg}`);
-          }
-          return path.resolve(arg);
-        },
       },
       detectors: {
         alias: "d",
