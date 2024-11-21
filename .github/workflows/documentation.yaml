@@ -123,12 +123,15 @@ jobs:
           # Create intro documentation
           echo "# Introduction to Snapper" > docs/intro.md
       
+      - name: Install TypeDoc and Plugins
+        working-directory: docusaurus-site
+        run: npm install typedoc@0.26.11 typedoc-plugin-markdown
+
       # Install dependencies
       - name: Install Docusaurus and TypeDoc Dependencies
         working-directory: docusaurus-site
         run: |
           npm install @docusaurus/core @docusaurus/preset-classic @docusaurus/theme-classic prism-react-renderer
-          npm install --save-dev typedoc typedoc-plugin-markdown
       
       # Generate API Documentation using TypeDoc
       - name: Generate API Documentation with TypeDoc
