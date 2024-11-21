@@ -20,34 +20,57 @@ jobs:
         with:
           node-version: '18'
           cache: npm
-      
-      # Install dependencies for TypeDoc
-      - name: Install Root Project Dependencies
-        run: npm install
 
-      # Generate API Documentation using TypeDoc
-      - name: Generate API Documentation with TypeDoc
-        run: npm run docs  # Runs TypeDoc and generates API docs in the root docs/API folder
-      
       # Prepare Docusaurus project
       - name: Prepare Docusaurus Project
         run: |
           mkdir -p docusaurus-site/docs
           mkdir -p docusaurus-site/src/css
-      
-      # Create Docusaurus Configuration
+
+      # Create Docusaurus Configuration with Dependencies and Scripts
       - name: Create Docusaurus Configuration
         working-directory: docusaurus-site
         run: |
           # Create package.json
           cat > package.json << 'EOL'
           {
-            "name": "snapper-docs",
-            "version": "1.0.0",
+            "name": "docs",
+            "version": "0.0.0",
             "private": true,
             "scripts": {
+              "docusaurus": "docusaurus",
               "start": "docusaurus start",
-              "build": "docusaurus build"
+              "build": "docusaurus build",
+              "swizzle": "docusaurus swizzle",
+              "deploy": "docusaurus deploy",
+              "clear": "docusaurus clear",
+              "serve": "docusaurus serve",
+              "write-translations": "docusaurus write-translations",
+              "write-heading-ids": "docusaurus write-heading-ids"
+            },
+            "dependencies": {
+              "@docusaurus/core": "2.0.0-beta.6",
+              "@docusaurus/preset-classic": "2.0.0-beta.6",
+              "@mdx-js/react": "^1.6.21",
+              "@svgr/webpack": "^5.5.0",
+              "clsx": "^1.1.1",
+              "file-loader": "^6.2.0",
+              "prism-react-renderer": "^1.2.1",
+              "react": "^17.0.1",
+              "react-dom": "^17.0.1",
+              "url-loader": "^4.1.1"
+            },
+            "browserslist": {
+              "production": [
+                ">0.5%",
+                "not dead",
+                "not op_mini all"
+              ],
+              "development": [
+                "last 1 chrome version",
+                "last 1 firefox version",
+                "last 1 safari version"
+              ]
             }
           }
           EOL
@@ -129,12 +152,11 @@ jobs:
           # Create intro documentation
           echo "# Introduction to Snapper" > docs/intro.md
       
-      # Install Docusaurus Dependencies
+      # Install Dependencies
       - name: Install Docusaurus Dependencies
         working-directory: docusaurus-site
-        run: |
-          npm install @docusaurus/core @docusaurus/preset-classic @docusaurus/theme-classic prism-react-renderer
-      
+        run: npm install
+
       # Copy API Docs into Docusaurus docs folder
       - name: Copy API Docs to Docusaurus
         run: cp -r docs/API docusaurus-site/docs/API
