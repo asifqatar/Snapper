@@ -91,7 +91,6 @@ jobs:
             favicon: 'https://avatars.githubusercontent.com/u/105142204?s=48&v=4',
             organizationName: 'asifqatar',
             projectName: 'Snapper',
-            deploymentBranch: 'gh-pages',
             presets: [
               [
                 '@docusaurus/preset-classic',
