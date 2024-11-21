@@ -52,7 +52,7 @@ jobs:
             title: 'Snapper',
             tagline: 'Snapper Documentation',
             url: 'https://asifqatar.github.io/Snapper',
-            baseUrl: '/Snapper/',
+            baseUrl: '/',
             trailingSlash: false,
             onBrokenLinks: 'throw',
             onBrokenMarkdownLinks: 'warn',
