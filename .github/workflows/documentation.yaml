@@ -21,29 +21,22 @@ jobs:
           node-version: '18'  # Use the correct node version
           cache: npm
 
-      # Step 3: Install dependencies
-      - name: Install dependencies
-        run: npm ci
-
-      # Step 4: Generate Typedoc Documentation (from `npm run docs`)
-      - name: Generate Typedoc Documentation
-        run: npm run docs
-
-      # Step 5: Install Docusaurus manually (without `create-docusaurus`)
-      - name: Install Docusaurus
+      # Step 3: Install Docusaurus dependencies
+      - name: Install Docusaurus Dependencies
+        working-directory: docusaurus-site  # Specify the Docusaurus directory
         run: |
+          npm init -y  # Create package.json if not exists
           npm install @docusaurus/core @docusaurus/preset-classic
 
-
-      # Step 7: Build the Docusaurus site
-      - name: Build Documentation
-        run: npm run build
+      # Step 4: Build Docusaurus Site
+      - name: Build Docusaurus Documentation
         working-directory: docusaurus-site
+        run: npx docusaurus build
 
-      # Step 8: Deploy to GitHub Pages
+      # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.GH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docusaurus-site/build
           publish_branch: gh-pages
