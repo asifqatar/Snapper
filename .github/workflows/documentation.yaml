@@ -159,13 +159,21 @@ jobs:
           }
           EOL
       
-      # Create index.md with content
+      # Create index.md file with front matter and content
       - name: Create index.md
         working-directory: docusaurus-site/docs
         run: |
-          echo "# Welcome to Snapper Docs" > index.md
-          echo "This is the main landing page for Snapper documentation." >> index.md
-          echo "You can navigate through the API docs and other sections from here." >> index.md
+          # Add front matter and content to index.md
+          echo '---' > index.md
+          echo 'slug: /' >> index.md
+          echo 'sidebar_position: 1' >> index.md
+          echo '---' >> index.md
+          echo '# Snapper 🐠' >> index.md
+          echo '' >> index.md
+          echo 'Welcome to Snapper Docs!' >> index.md
+          echo '' >> index.md
+          echo 'This is the main landing page for Snapper documentation.' >> index.md
+          echo 'You can navigate through the API docs and other sections from here.' >> index.md
     
       # Install Docusaurus Dependencies
       - name: Install Docusaurus Dependencies
@@ -243,7 +251,7 @@ jobs:
       - name: Build Docusaurus Documentation
         working-directory: docusaurus-site
         run: npm run build
-        
+
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
