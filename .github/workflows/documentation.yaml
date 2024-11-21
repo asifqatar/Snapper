@@ -34,11 +34,6 @@ jobs:
         run: |
           npm install @docusaurus/core @docusaurus/preset-classic
 
-      # Step 6: Move Typedoc Output to Docusaurus
-      - name: Move Typedoc Output to Docusaurus Docs
-        run: |
-          mkdir -p docusaurus-site/docs  # Create Docusaurus docs folder if it doesn't exist
-          mv ./docs/* docusaurus-site/docs/  # Move Typedoc output to Docusaurus docs folder
 
       # Step 7: Build the Docusaurus site
       - name: Build Documentation
