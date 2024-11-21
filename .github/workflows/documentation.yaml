@@ -14,31 +14,81 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Step 2: Create Docusaurus directory if not exists
-      - name: Create Docusaurus Directory
+      # Step 2: Create Docusaurus directory structure
+      - name: Prepare Docusaurus Directory
         run: |
-          mkdir -p docusaurus-site
+          mkdir -p docusaurus-site/docs
+          mkdir -p docusaurus-site/src/css
+          mkdir -p docusaurus-site/src/pages
 
-      # Step 3: Set up Node.js
+      # Step 3: Create minimal Docusaurus configuration files
+      - name: Create Docusaurus Configuration
+        working-directory: docusaurus-site
+        run: |
+          # Create config file
+          cat > docusaurus.config.js << EOL
+          module.exports = {
+            title: 'My Project Documentation',
+            tagline: 'Documentation for my project',
+            url: 'https://asifqatar.github.io',
+            baseUrl: '/Snapper/',
+            organizationName: 'asifqatar',
+            projectName: 'Snapper',
+            presets: [
+              [
+                'classic',
+                {
+                  docs: {
+                    sidebarPath: require.resolve('./sidebars.js'),
+                  },
+                  theme: {
+                    customCss: require.resolve('./src/css/custom.css'),
+                  },
+                },
+              ],
+            ],
+          };
+          EOL
+
+          # Create minimal sidebars file
+          cat > sidebars.js << EOL
+          module.exports = {
+            mySidebar: [
+              {
+                type: 'doc',
+                id: 'intro',
+              },
+            ],
+          };
+          EOL
+
+          # Create a basic custom CSS file
+          echo "/* Custom CSS */" > src/css/custom.css
+
+          # Create a basic intro doc
+          mkdir -p docs
+          echo "# Introduction" > docs/intro.md
+
+      # Step 4: Set up Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'  # Use the correct node version
           cache: npm
 
-      # Step 4: Install Docusaurus dependencies
+      # Step 5: Install Docusaurus dependencies
       - name: Install Docusaurus Dependencies
         working-directory: docusaurus-site
         run: |
           npm init -y
-          npm install @docusaurus/core @docusaurus/preset-classic
+          npm install @docusaurus/core @docusaurus/preset-classic @docusaurus/theme-classic
 
-      # Step 5: Build Docusaurus Site
+      # Step 6: Build Docusaurus Site
       - name: Build Docusaurus Documentation
         working-directory: docusaurus-site
         run: npx docusaurus build
 
-      # Step 6: Deploy to GitHub Pages
+      # Step 7: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
