@@ -156,10 +156,14 @@ jobs:
       - name: Install Docusaurus Dependencies
         working-directory: docusaurus-site
         run: npm install
-
-      # Copy API Docs into Docusaurus docs folder
+        
       - name: Copy API Docs to Docusaurus
-        run: cp -r docs/API docusaurus-site/docs/API
+        run: |
+          if [ -d docs/API ]; then
+            cp -r docs/API docusaurus-site/docs/API
+          else
+            echo "API documentation not found. Skipping copy step."
+          fi
 
       # Build Docusaurus site
       - name: Build Docusaurus Documentation
