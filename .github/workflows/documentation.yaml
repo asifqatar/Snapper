@@ -40,13 +40,13 @@ jobs:
             "scripts": {
               "start": "docusaurus start",
               "build": "docusaurus build",
-              "docs": "cp -r docs/* build/",
-              "typedoc": "npx typedoc"
+              "docs": "npm run typedoc",
+              "typedoc": "npx typedoc --options typedoc.json"
             }
           }
           EOL
 
-          # Create docusaurus.config.js (using the configuration from previous artifact)
+          # Create docusaurus.config.js
           cat > docusaurus.config.js << 'EOL'
           const { themes } = require('prism-react-renderer');
 
@@ -56,8 +56,8 @@ jobs:
             url: 'https://asifqatar.github.io',
             baseUrl: '/Snapper/',
             trailingSlash: false,
-            onBrokenLinks: 'warn',  // Changed to 'warn' to ignore broken links
-            onBrokenMarkdownLinks: 'warn', // Changed to 'warn' as well
+            onBrokenLinks: 'warn',
+            onBrokenMarkdownLinks: 'warn',
             favicon: 'https://avatars.githubusercontent.com/u/105142204?s=48&v=4',
             organizationName: 'asifqatar',
             projectName: 'Snapper',
@@ -123,11 +123,12 @@ jobs:
           # Create intro documentation
           echo "# Introduction to Snapper" > docs/intro.md
       
+      # Install TypeDoc and Plugins
       - name: Install TypeDoc and Plugins
         working-directory: docusaurus-site
         run: npm install typedoc@0.26.11 typedoc-plugin-markdown
 
-      # Install dependencies
+      # Install Docusaurus and dependencies
       - name: Install Docusaurus and TypeDoc Dependencies
         working-directory: docusaurus-site
         run: |
@@ -135,17 +136,13 @@ jobs:
       
       # Generate API Documentation using TypeDoc
       - name: Generate API Documentation with TypeDoc
-        run: |
-          npm run docs  # Runs TypeDoc and generates API docs in docs/API folder
-      
+        working-directory: docusaurus-site
+        run: npm run typedoc
+
       # Build Docusaurus site
       - name: Build Docusaurus Documentation
         working-directory: docusaurus-site
-        run: npx docusaurus build
-
-      # Copy generated API docs into the build folder
-      - name: Copy API Docs to Build Folder
-        run: cp -r docusaurus-site/docs/API docusaurus-site/build/docs/API
+        run: npm run build
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
