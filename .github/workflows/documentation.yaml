@@ -25,68 +25,6 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      # Run the custom script to remove README files and custom headers
-      - name: Run Cleanup Script
-        run: |
-          # Create cleanup.js file
-          echo "
-          const fs = require('fs');
-          const path = require('path');
-
-          const removeReadmeFiles = (directory) => {
-            fs.readdir(directory, (err, files) => {
-              if (err) {
-                console.error(\`Error reading directory \${directory}:\`, err);
-                return;
-              }
-
-              files.forEach((file) => {
-                const filePath = path.join(directory, file);
-                fs.stat(filePath, (err, stats) => {
-                  if (err) {
-                    console.error(\`Error getting stats for file \${filePath}:\`, err);
-                    return;
-                  }
-
-                  if (stats.isDirectory()) {
-                    removeReadmeFiles(filePath);
-                  } else if (file.toLowerCase() === 'readme.md') {
-                    fs.unlink(filePath, (err) => {
-                      if (err) {
-                        console.error(\`Error deleting file \${filePath}:\`, err);
-                      }
-                    });
-                  }
-                });
-              });
-            });
-          };
-
-          const headerRegex = /^\[\*\*Snapper Project\*\*]\(\.\.\/(?:\.\.\/)*README\.md\) • \*\*Docs\*\*\n\n/gm;
-
-          function removeCustomHeader(dir) {
-            fs.readdirSync(dir).forEach((file) => {
-              const filePath = path.join(dir, file);
-              if (fs.statSync(filePath).isDirectory()) {
-                removeCustomHeader(filePath);
-              } else if (filePath.endsWith('.md')) {
-                let content = fs.readFileSync(filePath, 'utf8');
-
-                const newContent = content.replace(headerRegex, '');
-                if (newContent !== content) {
-                  fs.writeFileSync(filePath, newContent, 'utf8');
-                }
-              }
-            });
-          }
-
-          removeReadmeFiles('docs/API');
-          removeCustomHeader('docs/API');
-          " > cleanup.js
-
-          # Run the cleanup script with Node.js
-          node cleanup.js
-
       # Generate API Documentation with TypeDoc
       - name: Generate API Documentation with TypeDoc
         run: npm run docs  # Runs TypeDoc and generates API docs in the root docs/API folder
@@ -243,6 +181,68 @@ jobs:
       - name: Build Docusaurus Documentation
         working-directory: docusaurus-site
         run: npm run build
+      
+      # Run the custom script to remove README files and custom headers
+      - name: Run Cleanup Script
+        run: |
+          # Create cleanup.js file
+          echo "
+          const fs = require('fs');
+          const path = require('path');
+
+          const removeReadmeFiles = (directory) => {
+            fs.readdir(directory, (err, files) => {
+              if (err) {
+                console.error(\`Error reading directory \${directory}:\`, err);
+                return;
+              }
+
+              files.forEach((file) => {
+                const filePath = path.join(directory, file);
+                fs.stat(filePath, (err, stats) => {
+                  if (err) {
+                    console.error(\`Error getting stats for file \${filePath}:\`, err);
+                    return;
+                  }
+
+                  if (stats.isDirectory()) {
+                    removeReadmeFiles(filePath);
+                  } else if (file.toLowerCase() === 'readme.md') {
+                    fs.unlink(filePath, (err) => {
+                      if (err) {
+                        console.error(\`Error deleting file \${filePath}:\`, err);
+                      }
+                    });
+                  }
+                });
+              });
+            });
+          };
+
+          const headerRegex = /^\[\*\*Snapper Project\*\*]\(\.\.\/(?:\.\.\/)*README\.md\) • \*\*Docs\*\*\n\n/gm;
+
+          function removeCustomHeader(dir) {
+            fs.readdirSync(dir).forEach((file) => {
+              const filePath = path.join(dir, file);
+              if (fs.statSync(filePath).isDirectory()) {
+                removeCustomHeader(filePath);
+              } else if (filePath.endsWith('.md')) {
+                let content = fs.readFileSync(filePath, 'utf8');
+
+                const newContent = content.replace(headerRegex, '');
+                if (newContent !== content) {
+                  fs.writeFileSync(filePath, newContent, 'utf8');
+                }
+              }
+            });
+          }
+
+          removeReadmeFiles('docusaurus-site/docs/API');
+          removeCustomHeader('docusaurus-site/docs/API');
+          " > cleanup.js
+
+          # Run the cleanup script with Node.js
+          node cleanup.js
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
