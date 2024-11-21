@@ -1,16 +1,16 @@
-name: Documentation
+name: Deploy Docusaurus Documentation
 
 on:
   push:
     branches:
-      - gh-pages-release # Or any branch you want to deploy from
+      - gh-pages-release  # Replace with your target branch
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Check out the code
+      # Step 1: Checkout code
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -18,7 +18,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18' # Ensure the node version matches your project's requirements
+          node-version: '18'  # Use the correct node version
           cache: npm
 
       # Step 3: Install dependencies
@@ -29,18 +29,16 @@ jobs:
       - name: Generate Typedoc Documentation
         run: npm run docs
 
-      # Step 5: Install Docusaurus
+      # Step 5: Install Docusaurus manually (without `create-docusaurus`)
       - name: Install Docusaurus
         run: |
-          npx create-docusaurus@latest docusaurus-site classic --skip-install
-          cd docusaurus-site
-          npm install
+          npm install @docusaurus/core @docusaurus/preset-classic
 
       # Step 6: Move Typedoc Output to Docusaurus
-      - name: Move Typedoc Output
+      - name: Move Typedoc Output to Docusaurus Docs
         run: |
-          mv ./docs docusaurus-site/docs # Move Typedoc output to Docusaurus' docs folder
-        working-directory: .
+          mkdir -p docusaurus-site/docs  # Create Docusaurus docs folder if it doesn't exist
+          mv ./docs/* docusaurus-site/docs/  # Move Typedoc output to Docusaurus docs folder
 
       # Step 7: Build the Docusaurus site
       - name: Build Documentation
