@@ -1,7 +1,7 @@
 {
   "name": "Snapper Project",
   "entryPoints": ["./**/*.ts"],
-  "out": "docs",
+  "out": "docs/API",
   "exclude": [
     "testcases/**/*",
     "**/testcases/**",

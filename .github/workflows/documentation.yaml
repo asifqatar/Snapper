@@ -131,7 +131,21 @@ jobs:
       - name: Build Docusaurus Documentation
         working-directory: docusaurus-site
         run: npx docusaurus build
+     
+      # Generate API Documentation using TypeDoc
+      - name: Generate API Documentation with TypeDoc
+        run: |
+          npm run docs
       
+      # Copy docs into the build folder after build
+      - name: Copy Docs to Build Folder
+        working-directory: docusaurus-site
+        run: npm run docs
+
+      # Copy generated API docs into the build folder
+      - name: Copy API Docs to Build Folder
+        run: cp -r docusaurus-site/docs/API docusaurus-site/build/docs/API
+
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
