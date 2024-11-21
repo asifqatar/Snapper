@@ -27,12 +27,14 @@ jobs:
           # Create config file
           cat > docusaurus.config.js << EOL
           module.exports = {
-            title: 'Project Documentation',
-            tagline: 'Comprehensive Project Documentation',
-            url: 'https://asifqatar.github.io',
+            title: 'Snapper',
+            tagline: 'Snapper',
+            url: 'https://asifqatar.github.io/Snapper',
             baseUrl: '/Snapper/',
-            onBrokenLinks: 'warn',
+            trailingSlash: false,
+            onBrokenLinks: 'throw',
             onBrokenMarkdownLinks: 'warn',
+            favicon: 'https://avatars.githubusercontent.com/u/105142204?s=48&v=4', 
             organizationName: 'asifqatar',
             projectName: 'Snapper',
             presets: [
@@ -42,6 +44,7 @@ jobs:
                   docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
                     routeBasePath: '/', // Serve documentation at the site root
+                    editUrl: 'https://github.com/sayfer-io/Snapper/blob/main/',
                   },
                   theme: {
                     customCss: require.resolve('./src/css/custom.css'),
@@ -52,37 +55,64 @@ jobs:
             themeConfig: {
               navbar: {
                 title: 'Project Docs',
-                items: [
+                logo: {
+                  alt: 'Snapper',
+                  src: 'https://avatars.githubusercontent.com/u/105142204?s=200&v=4',
+                },
+              },
+              footer: {
+                style: 'dark',
+                links: [
                   {
-                    type: 'doc',
-                    docId: 'intro',
-                    position: 'left',
-                    label: 'Documentation',
+                    title: 'Docs',
+                    items: [
+                      {
+                        label: 'API',
+                        to: '#',
+                      },
+                    ],
+                  },
+                  {
+                    title: 'Community',
+                    items: [
+                      {
+                        label: 'Stack Overflow',
+                        href: 'https://stackoverflow.com/questions/tagged/',
+                      },
+                      {
+                        label: 'Discord',
+                        href: 'https://discordapp.com/invite',
+                      },
+                      {
+                        label: 'Twitter',
+                        href: 'https://twitter.com',
+                      },
+                    ],
+                  },
+                  {
+                    title: 'More',
+                    items: [
+                      {
+                        label: 'Blog',
+                        to: 'https://sayfer.io/blog',
+                      },
+                      {
+                        label: 'GitHub',
+                        href: 'https://github.com/sayfer-io/Snapper',
+                      },
+                    ],
                   },
                 ],
+                copyright: `Copyright © ${new Date().getFullYear()} Snapper, Inc.`,
+              },
+              prism: {
+                theme: lightCodeTheme,
+                darkTheme: darkCodeTheme,
               },
             },
           };
           EOL
-
-          # Create minimal sidebars file
-          cat > sidebars.js << EOL
-          module.exports = {
-            mySidebar: [
-              {
-                type: 'doc',
-                id: 'intro',
-              },
-            ],
-          };
-          EOL
-
-          # Create a basic custom CSS file
-          echo "/* Custom CSS */" > src/css/custom.css
-
-          # Create a basic intro doc
-          echo "# Introduction to the Project" > docs/intro.md
-
+          
       # Step 4: Set up Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
