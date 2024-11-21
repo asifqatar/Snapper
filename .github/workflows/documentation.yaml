@@ -19,7 +19,6 @@ jobs:
         run: |
           mkdir -p docusaurus-site/docs
           mkdir -p docusaurus-site/src/css
-          mkdir -p docusaurus-site/src/pages
 
       # Step 3: Create minimal Docusaurus configuration files
       - name: Create Docusaurus Configuration
@@ -28,11 +27,13 @@ jobs:
           # Create config file
           cat > docusaurus.config.js << EOL
           module.exports = {
-            title: 'My Project Documentation',
-            tagline: 'Documentation for my project',
-            url: 'https://asifqatar.github.io',
+            title: 'Project Documentation',
+            tagline: 'Comprehensive Project Documentation',
+            url: 'https://yourusername.github.io',
             baseUrl: '/Snapper/',
-            organizationName: 'asifqatar',
+            onBrokenLinks: 'warn',
+            onBrokenMarkdownLinks: 'warn',
+            organizationName: 'yourusername',
             projectName: 'Snapper',
             presets: [
               [
@@ -40,6 +41,7 @@ jobs:
                 {
                   docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
+                    routeBasePath: '/', // Serve documentation at the site root
                   },
                   theme: {
                     customCss: require.resolve('./src/css/custom.css'),
@@ -47,6 +49,19 @@ jobs:
                 },
               ],
             ],
+            themeConfig: {
+              navbar: {
+                title: 'Project Docs',
+                items: [
+                  {
+                    type: 'doc',
+                    docId: 'intro',
+                    position: 'left',
+                    label: 'Documentation',
+                  },
+                ],
+              },
+            },
           };
           EOL
 
@@ -66,8 +81,7 @@ jobs:
           echo "/* Custom CSS */" > src/css/custom.css
 
           # Create a basic intro doc
-          mkdir -p docs
-          echo "# Introduction" > docs/intro.md
+          echo "# Introduction to the Project" > docs/intro.md
 
       # Step 4: Set up Node.js
       - name: Setup Node.js
