@@ -133,7 +133,7 @@ jobs:
       # Generate API Documentation using TypeDoc
       - name: Generate API Documentation with TypeDoc
         run: |
-          npm run typedoc  # Runs TypeDoc and generates API docs in docs/API folder
+          npm run docs  # Runs TypeDoc and generates API docs in docs/API folder
       
       # Build Docusaurus site
       - name: Build Docusaurus Documentation
