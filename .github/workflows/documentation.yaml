@@ -41,7 +41,7 @@ jobs:
               "start": "docusaurus start",
               "build": "docusaurus build",
               "docs": "npm run typedoc",
-              "typedoc": "npx typedoc --options typedoc.json"
+              "typedoc": "npx typedoc --options ./typedoc.json"
             }
           }
           EOL
