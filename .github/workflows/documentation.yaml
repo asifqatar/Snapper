@@ -46,7 +46,7 @@ jobs:
                 {
                   docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
-                    routeBasePath: '/', // Opens Docs as the homepage
+                    routeBasePath: '/', # Opens Docs as the homepage
                     editUrl: 'https://github.com/sayfer-io/Snapper/blob/main/',
                   },
                   blog: {
@@ -154,12 +154,12 @@ jobs:
           node-version: '18'  # Use the correct node version
           cache: npm
 
-      # Step 5: Install Docusaurus dependencies
+      # Step 5: Install Docusaurus and Prism React Renderer Dependencies
       - name: Install Docusaurus Dependencies
         working-directory: docusaurus-site
         run: |
           npm init -y
-          npm install @docusaurus/core @docusaurus/preset-classic @docusaurus/theme-classic
+          npm install @docusaurus/core @docusaurus/preset-classic @docusaurus/theme-classic prism-react-renderer
 
       # Step 6: Build Docusaurus Site
       - name: Build Docusaurus Documentation
