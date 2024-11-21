@@ -20,66 +20,40 @@ jobs:
         with:
           node-version: '18'
           cache: npm
+      
+      # Install dependencies for TypeDoc
+      - name: Install Root Project Dependencies
+        run: npm install
 
+      # Generate API Documentation using TypeDoc
+      - name: Generate API Documentation with TypeDoc
+        run: npm run docs  # Runs TypeDoc and generates API docs in the root docs/API folder
+      
       # Prepare Docusaurus project
       - name: Prepare Docusaurus Project
         run: |
           mkdir -p docusaurus-site/docs
           mkdir -p docusaurus-site/src/css
-
-      # Create Docusaurus Configuration with Dependencies and Scripts
+      
+      # Create Docusaurus Configuration
       - name: Create Docusaurus Configuration
         working-directory: docusaurus-site
         run: |
           # Create package.json
           cat > package.json << 'EOL'
           {
-            "name": "docs",
-            "version": "0.0.0",
+            "name": "snapper-docs",
+            "version": "1.0.0",
             "private": true,
             "scripts": {
-              "docusaurus": "docusaurus",
               "start": "docusaurus start",
-              "build": "docusaurus build",
-              "swizzle": "docusaurus swizzle",
-              "deploy": "docusaurus deploy",
-              "clear": "docusaurus clear",
-              "serve": "docusaurus serve",
-              "write-translations": "docusaurus write-translations",
-              "write-heading-ids": "docusaurus write-heading-ids"
-            },
-            "dependencies": {
-              "@docusaurus/core": "2.0.0-beta.6",
-              "@docusaurus/preset-classic": "2.0.0-beta.6",
-              "@mdx-js/react": "^1.6.21",
-              "@svgr/webpack": "^5.5.0",
-              "clsx": "^1.1.1",
-              "file-loader": "^6.2.0",
-              "prism-react-renderer": "^1.2.1",
-              "react": "^17.0.1",
-              "react-dom": "^17.0.1",
-              "url-loader": "^4.1.1"
-            },
-            "browserslist": {
-              "production": [
-                ">0.5%",
-                "not dead",
-                "not op_mini all"
-              ],
-              "development": [
-                "last 1 chrome version",
-                "last 1 firefox version",
-                "last 1 safari version"
-              ]
+              "build": "docusaurus build"
             }
           }
           EOL
-
           # Create docusaurus.config.js
           cat > docusaurus.config.js << 'EOL'
-          const lightCodeTheme = require('prism-react-renderer/themes/github');
-          const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-
+          const { themes } = require('prism-react-renderer');
           module.exports = {
             title: 'Snapper',
             tagline: 'Snapper Documentation',
@@ -91,6 +65,7 @@ jobs:
             favicon: 'https://avatars.githubusercontent.com/u/105142204?s=48&v=4',
             organizationName: 'asifqatar',
             projectName: 'Snapper',
+            deploymentBranch: 'gh-pages',
             presets: [
               [
                 '@docusaurus/preset-classic',
@@ -127,35 +102,37 @@ jobs:
                 ],
               },
               prism: {
-                theme: lightCodeTheme,
-                darkTheme: darkCodeTheme,
+                theme: themes.github,
+                darkTheme: themes.dracula,
               },
             },
           };
           EOL
-
+          # Create sidebars.js
+          cat > sidebars.js << 'EOL'
+          module.exports = {
+            mySidebar: [
+              {
+                type: 'doc',
+                id: 'intro',
+              },
+            ],
+          };
+          EOL
           # Create custom CSS
           echo "/* Custom CSS */" > src/css/custom.css
-
           # Create intro documentation
           echo "# Introduction to Snapper" > docs/intro.md
       
-      # Install Dependencies
+      # Install Docusaurus Dependencies
       - name: Install Docusaurus Dependencies
         working-directory: docusaurus-site
-        run: npm install
-        
-      # Generate API Documentation using TypeDoc
-      - name: Generate API Documentation with TypeDoc
-        run: npm run docs  # Runs TypeDoc and generates API docs in the root docs/API folder
-        
-      - name: Copy API Docs to Docusaurus
         run: |
-          if [ -d docs/API ]; then
-            cp -r docs/API docusaurus-site/docs/API
-          else
-            echo "API documentation not found. Skipping copy step."
-          fi
+          npm install @docusaurus/core @docusaurus/preset-classic @docusaurus/theme-classic prism-react-renderer
+      
+      # Copy API Docs into Docusaurus docs folder
+      - name: Copy API Docs to Docusaurus
+        run: cp -r docs/API docusaurus-site/docs/API
 
       # Build Docusaurus site
       - name: Build Docusaurus Documentation
