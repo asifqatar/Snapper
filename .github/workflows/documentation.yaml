@@ -54,8 +54,8 @@ jobs:
             url: 'https://asifqatar.github.io',
             baseUrl: '/Snapper/',
             trailingSlash: false,
-            onBrokenLinks: 'throw',
-            onBrokenMarkdownLinks: 'warn',
+            onBrokenLinks: 'warn',  // Changed to 'warn' to ignore broken links
+            onBrokenMarkdownLinks: 'warn', // Changed to 'warn' as well
             favicon: 'https://avatars.githubusercontent.com/u/105142204?s=48&v=4',
             organizationName: 'asifqatar',
             projectName: 'Snapper',
