@@ -134,18 +134,6 @@ jobs:
           };
           EOL
 
-          # Create sidebars.js
-          cat > sidebars.js << 'EOL'
-          module.exports = {
-            mySidebar: [
-              {
-                type: 'doc',
-                id: 'intro',
-              },
-            ],
-          };
-          EOL
-
           # Create custom CSS
           echo "/* Custom CSS */" > src/css/custom.css
 
@@ -156,6 +144,10 @@ jobs:
       - name: Install Docusaurus Dependencies
         working-directory: docusaurus-site
         run: npm install
+        
+      # Generate API Documentation using TypeDoc
+      - name: Generate API Documentation with TypeDoc
+        run: npm run docs  # Runs TypeDoc and generates API docs in the root docs/API folder
         
       - name: Copy API Docs to Docusaurus
         run: |
