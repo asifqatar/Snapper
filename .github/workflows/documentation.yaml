@@ -29,11 +29,11 @@ jobs:
           module.exports = {
             title: 'Project Documentation',
             tagline: 'Comprehensive Project Documentation',
-            url: 'https://yourusername.github.io',
+            url: 'https://asifqatar.github.io',
             baseUrl: '/Snapper/',
             onBrokenLinks: 'warn',
             onBrokenMarkdownLinks: 'warn',
-            organizationName: 'yourusername',
+            organizationName: 'asifqatar',
             projectName: 'Snapper',
             presets: [
               [
