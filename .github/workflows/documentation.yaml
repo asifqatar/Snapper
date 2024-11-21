@@ -17,33 +17,33 @@ jobs:
       # Step 2: Run the shell script to create Docusaurus configuration
       - name: Create Docusaurus Configuration
         run: |
-          chmod +x ./create-docusaurus-config.sh
-          ./create-docusaurus-config.sh
+          chmod +x ./create-docusaurus-config.sh  # Ensure the script is executable
+          ./create-docusaurus-config.sh  # Execute the shell script to set up Docusaurus
 
       # Step 3: Set up Node.js (ensure Node.js v20 or higher)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'  # Ensure Node.js version 20 or higher
-          cache: npm
+          cache: npm  # Cache npm dependencies for faster builds
 
       # Step 4: Install dependencies including Docusaurus
       - name: Install Dependencies
-        working-directory: docusaurus-site
+        working-directory: docusaurus-site  # Change working directory to docusaurus-site
         run: |
-          npm install
-          npm install -g pnpm  # Install pnpm globally if needed
+          npm install  # Install dependencies from package.json
+          npm install -g pnpm  # Install pnpm globally if needed (you can remove if not required)
 
       # Step 5: Build Docusaurus Site
       - name: Build Docusaurus Documentation
-        working-directory: docusaurus-site
+        working-directory: docusaurus-site  # Change working directory to docusaurus-site
         run: |
-          npx --no-install docusaurus build
+          npx --no-install docusaurus build  # Build the Docusaurus site without installing dependencies again
 
       # Step 6: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docusaurus-site/build
-          publish_branch: gh-pages
+          github_token: ${{ secrets.GH_TOKEN }}  # GitHub token for authentication
+          publish_dir: docusaurus-site/build  # Directory to publish after build
+          publish_branch: gh-pages  # Branch where the documentation will be deployed
