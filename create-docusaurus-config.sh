@@ -63,4 +63,8 @@ echo "/* Custom CSS */" > docusaurus-site/src/css/custom.css
 # Create a basic introductory markdown file
 echo "# Introduction to the Project" > docusaurus-site/docs/intro.md
 
-echo "Docusaurus configuration files created successfully!"
+# Navigate to the Docusaurus directory and install dependencies
+cd docusaurus-site
+npm install
+
+echo "Docusaurus configuration files created and dependencies installed successfully!"
