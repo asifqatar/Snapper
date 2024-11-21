@@ -77,7 +77,8 @@ jobs:
 
           # Create docusaurus.config.js
           cat > docusaurus.config.js << 'EOL'
-          const { themes } = require('prism-react-renderer');
+          const lightCodeTheme = require('prism-react-renderer/themes/github');
+          const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
           module.exports = {
             title: 'Snapper',
@@ -127,8 +128,8 @@ jobs:
                 ],
               },
               prism: {
-                theme: themes.github,
-                darkTheme: themes.dracula,
+                theme: lightCodeTheme,
+                darkTheme: darkCodeTheme,
               },
             },
           };
