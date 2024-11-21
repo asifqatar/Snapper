@@ -176,11 +176,6 @@ jobs:
       # Copy API Docs into Docusaurus docs folder
       - name: Copy API Docs to Docusaurus
         run: cp -r docs/API docusaurus-site/docs/API
-
-      # Build Docusaurus site
-      - name: Build Docusaurus Documentation
-        working-directory: docusaurus-site
-        run: npm run build
       
       # Run the custom script to remove README files and custom headers
       - name: Run Cleanup Script
@@ -244,6 +239,11 @@ jobs:
           # Run the cleanup script with Node.js
           node cleanup.js
 
+      # Build Docusaurus site
+      - name: Build Docusaurus Documentation
+        working-directory: docusaurus-site
+        run: npm run build
+        
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
