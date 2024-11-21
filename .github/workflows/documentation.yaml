@@ -21,13 +21,21 @@ jobs:
           node-version: '18'
           cache: npm
       
+      # Install dependencies for TypeDoc
+      - name: Install Root Project Dependencies
+        run: npm install
+
+      # Generate API Documentation using TypeDoc
+      - name: Generate API Documentation with TypeDoc
+        run: npm run docs  # Runs TypeDoc and generates API docs in the root docs/API folder
+      
       # Prepare Docusaurus project
       - name: Prepare Docusaurus Project
         run: |
           mkdir -p docusaurus-site/docs
           mkdir -p docusaurus-site/src/css
       
-      # Create project files
+      # Create Docusaurus Configuration
       - name: Create Docusaurus Configuration
         working-directory: docusaurus-site
         run: |
@@ -39,9 +47,7 @@ jobs:
             "private": true,
             "scripts": {
               "start": "docusaurus start",
-              "build": "docusaurus build",
-              "docs": "npm run typedoc",
-              "typedoc": "npx typedoc --options ./typedoc.json"
+              "build": "docusaurus build"
             }
           }
           EOL
@@ -123,21 +129,15 @@ jobs:
           # Create intro documentation
           echo "# Introduction to Snapper" > docs/intro.md
       
-      # Install TypeDoc and Plugins
-      - name: Install TypeDoc and Plugins
-        working-directory: docusaurus-site
-        run: npm install typedoc@0.26.11 typedoc-plugin-markdown
-
-      # Install Docusaurus and dependencies
-      - name: Install Docusaurus and TypeDoc Dependencies
+      # Install Docusaurus Dependencies
+      - name: Install Docusaurus Dependencies
         working-directory: docusaurus-site
         run: |
           npm install @docusaurus/core @docusaurus/preset-classic @docusaurus/theme-classic prism-react-renderer
       
-      # Generate API Documentation using TypeDoc
-      - name: Generate API Documentation with TypeDoc
-        working-directory: docusaurus-site
-        run: npm run docs
+      # Copy API Docs into Docusaurus docs folder
+      - name: Copy API Docs to Docusaurus
+        run: cp -r docs/API docusaurus-site/docs/API
 
       # Build Docusaurus site
       - name: Build Docusaurus Documentation
