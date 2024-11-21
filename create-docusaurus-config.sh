@@ -1,27 +1,27 @@
 #!/bin/bash
 
-# Create the necessary directory structure
+# Create the Docusaurus site structure
 mkdir -p docusaurus-site/docs
 mkdir -p docusaurus-site/src/css
 
-# Create Docusaurus configuration file
+# Create the Docusaurus configuration file
 cat > docusaurus-site/docusaurus.config.js << EOL
 module.exports = {
   title: 'Project Documentation',
   tagline: 'Comprehensive Project Documentation',
-  url: 'https://yourusername.github.io',
+  url: 'https://asifqatar.github.io',
   baseUrl: '/Snapper/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-  organizationName: 'yourusername',
-  projectName: 'Snapper',
+  organizationName: 'asifqatar', // GitHub org/user name
+  projectName: 'Snapper', // Repo name
   presets: [
     [
       'classic',
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          routeBasePath: '/', # Serve documentation at the site root
+          routeBasePath: '/', // Serve documentation at the site root
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -45,7 +45,7 @@ module.exports = {
 };
 EOL
 
-# Create minimal sidebars file
+# Create the sidebar configuration file
 cat > docusaurus-site/sidebars.js << EOL
 module.exports = {
   mySidebar: [
@@ -60,5 +60,7 @@ EOL
 # Create a basic custom CSS file
 echo "/* Custom CSS */" > docusaurus-site/src/css/custom.css
 
-# Create a basic intro doc
+# Create a basic introductory markdown file
 echo "# Introduction to the Project" > docusaurus-site/docs/intro.md
+
+echo "Docusaurus configuration files created successfully!"

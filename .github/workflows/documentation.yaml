@@ -14,10 +14,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Step 2: Run script to create configuration files
+      # Step 2: Run the shell script to create Docusaurus configuration files
       - name: Create Docusaurus Configuration
         run: |
-          chmod +x create-docusaurus-config.sh
+          chmod +x ./create-docusaurus-config.sh
           ./create-docusaurus-config.sh
 
       # Step 3: Set up Node.js
@@ -31,8 +31,7 @@ jobs:
       - name: Install Docusaurus Dependencies
         working-directory: docusaurus-site
         run: |
-          npm init -y
-          npm install @docusaurus/core @docusaurus/preset-classic @docusaurus/theme-classic
+          npm install
 
       # Step 5: Build Docusaurus Site
       - name: Build Docusaurus Documentation
