@@ -14,26 +14,31 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Step 2: Set up Node.js
+      # Step 2: Create Docusaurus directory if not exists
+      - name: Create Docusaurus Directory
+        run: |
+          mkdir -p docusaurus-site
+
+      # Step 3: Set up Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'  # Use the correct node version
           cache: npm
 
-      # Step 3: Install Docusaurus dependencies
+      # Step 4: Install Docusaurus dependencies
       - name: Install Docusaurus Dependencies
-        working-directory: docusaurus-site  # Specify the Docusaurus directory
+        working-directory: docusaurus-site
         run: |
-          npm init -y  # Create package.json if not exists
+          npm init -y
           npm install @docusaurus/core @docusaurus/preset-classic
 
-      # Step 4: Build Docusaurus Site
+      # Step 5: Build Docusaurus Site
       - name: Build Docusaurus Documentation
         working-directory: docusaurus-site
         run: npx docusaurus build
 
-      # Step 5: Deploy to GitHub Pages
+      # Step 6: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
