@@ -10,7 +10,6 @@
     "**/localtests/**"
   ],
   "plugin": ["typedoc-plugin-markdown"],
-  "hideBreadcrumbs": true,
   "includeVersion": true,
   "hideGenerator": true,
   "excludePrivate": true,
