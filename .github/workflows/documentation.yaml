@@ -38,7 +38,7 @@ jobs:
       - name: Build Docusaurus Documentation
         working-directory: docusaurus-site
         run: |
-          npx docusaurus build
+          npx --no-install docusaurus build
 
       # Step 6: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
