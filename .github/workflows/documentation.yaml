@@ -76,51 +76,6 @@ jobs:
                   },
                 ],
               },
-              footer: {
-                style: 'dark',
-                links: [
-                  {
-                    title: 'Docs',
-                    items: [
-                      {
-                        label: 'API',
-                        to: '#',
-                      },
-                    ],
-                  },
-                  {
-                    title: 'Community',
-                    items: [
-                      {
-                        label: 'Stack Overflow',
-                        href: 'https://stackoverflow.com/questions/tagged/',
-                      },
-                      {
-                        label: 'Discord',
-                        href: 'https://discordapp.com/invite',
-                      },
-                      {
-                        label: 'Twitter',
-                        href: 'https://twitter.com',
-                      },
-                    ],
-                  },
-                  {
-                    title: 'More',
-                    items: [
-                      {
-                        label: 'Blog',
-                        to: 'https://sayfer.io/blog',
-                      },
-                      {
-                        label: 'GitHub',
-                        href: 'https://github.com/sayfer-io/Snapper',
-                      },
-                    ],
-                  },
-                ],
-                copyright: \`Copyright © \${new Date().getFullYear()} Snapper, Inc.\`,
-              },
               prism: {
                 theme: lightCodeTheme,
                 darkTheme: darkCodeTheme,
