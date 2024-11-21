@@ -80,8 +80,8 @@ jobs:
             });
           }
 
-          removeReadmeFiles('docusaurus-site/docs/API');
-          removeCustomHeader('docusaurus-site/docs/API');
+          removeReadmeFiles('docs/API');
+          removeCustomHeader('docs/API');
           " > cleanup.js
 
           # Run the cleanup script with Node.js
