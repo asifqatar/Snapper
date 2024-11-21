@@ -3,35 +3,42 @@ name: Deploy Docusaurus Documentation
 on:
   push:
     branches:
-      - gh-pages-release  # Replace with your target branch
+      - gh-pages-release  # Trigger on pushes to this branch
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
+    
     steps:
-      # Step 1: Checkout code
-      - name: Checkout code
+      # Checkout the repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
-
-      # Step 2: Create Docusaurus directory structure
+      
+      # Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: npm
+      
+      # Create Docusaurus project structure
       - name: Prepare Docusaurus Directory
         run: |
           mkdir -p docusaurus-site/docs
           mkdir -p docusaurus-site/src/css
-
-      # Step 3: Create minimal Docusaurus configuration files
+      
+      # Create Docusaurus configuration files
       - name: Create Docusaurus Configuration
         working-directory: docusaurus-site
         run: |
-          # Create config file
-          cat > docusaurus.config.js << EOL
+          # Create docusaurus.config.js
+          cat > docusaurus.config.js << 'EOL'
           const lightCodeTheme = require('prism-react-renderer/themes/github');
           const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
           module.exports = {
             title: 'Snapper',
-            tagline: 'Snapper',
+            tagline: 'Snapper Documentation',
             url: 'https://asifqatar.github.io/Snapper',
             baseUrl: '/Snapper/',
             trailingSlash: false,
@@ -46,13 +53,12 @@ jobs:
                 {
                   docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
-                    routeBasePath: '/', # Opens Docs as the homepage
+                    routeBasePath: '/',
                     editUrl: 'https://github.com/sayfer-io/Snapper/blob/main/',
                   },
                   blog: {
                     showReadingTime: true,
-                    editUrl:
-                      'https://github.com/facebook/docusaurus/edit/main/website/blog/',
+                    editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/blog/',
                   },
                   theme: {
                     customCss: require.resolve('./src/css/custom.css'),
@@ -64,7 +70,7 @@ jobs:
               navbar: {
                 title: 'Snapper',
                 logo: {
-                  alt: 'Snapper',
+                  alt: 'Snapper Logo',
                   src: 'https://avatars.githubusercontent.com/u/105142204?s=200&v=4',
                 },
                 items: [
@@ -84,8 +90,8 @@ jobs:
           };
           EOL
 
-          # Create minimal sidebars file
-          cat > sidebars.js << EOL
+          # Create sidebars.js
+          cat > sidebars.js << 'EOL'
           module.exports = {
             mySidebar: [
               {
@@ -96,32 +102,25 @@ jobs:
           };
           EOL
 
-          # Create a basic custom CSS file
+          # Create custom CSS
           echo "/* Custom CSS */" > src/css/custom.css
 
-          # Create a basic intro doc
-          echo "# Introduction to the Project" > docs/intro.md
-
-      # Step 4: Set up Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'  # Use the correct node version
-          cache: npm
-
-      # Step 5: Install Docusaurus and Prism React Renderer Dependencies
+          # Create intro documentation
+          echo "# Introduction to Snapper" > docs/intro.md
+      
+      # Install dependencies
       - name: Install Docusaurus Dependencies
         working-directory: docusaurus-site
         run: |
           npm init -y
           npm install @docusaurus/core @docusaurus/preset-classic @docusaurus/theme-classic prism-react-renderer
-
-      # Step 6: Build Docusaurus Site
+      
+      # Build Docusaurus site
       - name: Build Docusaurus Documentation
         working-directory: docusaurus-site
         run: npx docusaurus build
-
-      # Step 7: Deploy to GitHub Pages
+      
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
