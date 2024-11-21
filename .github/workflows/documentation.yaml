@@ -14,95 +14,32 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Step 2: Create Docusaurus directory structure
-      - name: Prepare Docusaurus Directory
-        run: |
-          mkdir -p docusaurus-site/docs
-          mkdir -p docusaurus-site/src/css
-
-      # Step 3: Create minimal Docusaurus configuration files
+      # Step 2: Run script to create configuration files
       - name: Create Docusaurus Configuration
-        working-directory: docusaurus-site
         run: |
-          # Create config file
-          cat > docusaurus.config.js << EOL
-          module.exports = {
-            title: 'Project Documentation',
-            tagline: 'Comprehensive Project Documentation',
-            url: 'https://yourusername.github.io',
-            baseUrl: '/Snapper/',
-            onBrokenLinks: 'warn',
-            onBrokenMarkdownLinks: 'warn',
-            organizationName: 'yourusername',
-            projectName: 'Snapper',
-            presets: [
-              [
-                'classic',
-                {
-                  docs: {
-                    sidebarPath: require.resolve('./sidebars.js'),
-                    routeBasePath: '/', // Serve documentation at the site root
-                  },
-                  theme: {
-                    customCss: require.resolve('./src/css/custom.css'),
-                  },
-                },
-              ],
-            ],
-            themeConfig: {
-              navbar: {
-                title: 'Project Docs',
-                items: [
-                  {
-                    type: 'doc',
-                    docId: 'intro',
-                    position: 'left',
-                    label: 'Documentation',
-                  },
-                ],
-              },
-            },
-          };
-          EOL
+          chmod +x create-docusaurus-config.sh
+          ./create-docusaurus-config.sh
 
-          # Create minimal sidebars file
-          cat > sidebars.js << EOL
-          module.exports = {
-            mySidebar: [
-              {
-                type: 'doc',
-                id: 'intro',
-              },
-            ],
-          };
-          EOL
-
-          # Create a basic custom CSS file
-          echo "/* Custom CSS */" > src/css/custom.css
-
-          # Create a basic intro doc
-          echo "# Introduction to the Project" > docs/intro.md
-
-      # Step 4: Set up Node.js
+      # Step 3: Set up Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'  # Use the correct node version
           cache: npm
 
-      # Step 5: Install Docusaurus dependencies
+      # Step 4: Install Docusaurus dependencies
       - name: Install Docusaurus Dependencies
         working-directory: docusaurus-site
         run: |
           npm init -y
           npm install @docusaurus/core @docusaurus/preset-classic @docusaurus/theme-classic
 
-      # Step 6: Build Docusaurus Site
+      # Step 5: Build Docusaurus Site
       - name: Build Docusaurus Documentation
         working-directory: docusaurus-site
         run: npx docusaurus build
 
-      # Step 7: Deploy to GitHub Pages
+      # Step 6: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
