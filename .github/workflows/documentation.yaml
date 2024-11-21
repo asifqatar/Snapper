@@ -3,7 +3,7 @@ name: Documentation
 on:
   push:
     branches:
-      - main
+      - gh-pages-release
 
 jobs:
   build:
@@ -50,12 +50,12 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: docs
-          path: ./docs
+#          path: ./docs
 
       # Step 3: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.PAT_TOKEN }}
+          personal_token: ${{ secrets.GH_TOKEN }}
           publish_dir: ./docs
           publish_branch: gh-pages
