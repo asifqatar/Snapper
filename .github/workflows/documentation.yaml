@@ -14,24 +14,25 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Step 2: Run the shell script to create Docusaurus configuration files
+      # Step 2: Run the shell script to create Docusaurus configuration
       - name: Create Docusaurus Configuration
         run: |
           chmod +x ./create-docusaurus-config.sh
           ./create-docusaurus-config.sh
 
-      # Step 3: Set up Node.js
+      # Step 3: Set up Node.js (ensure Node.js v20 or higher)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'  # Use the correct node version
+          node-version: '20'  # Ensure Node.js version 20 or higher
           cache: npm
 
-      # Step 4: Install Docusaurus dependencies
-      - name: Install Docusaurus Dependencies
+      # Step 4: Install dependencies including Docusaurus
+      - name: Install Dependencies
         working-directory: docusaurus-site
         run: |
           npm install
+          npm install -g pnpm  # Install pnpm globally if needed
 
       # Step 5: Build Docusaurus Site
       - name: Build Docusaurus Documentation
