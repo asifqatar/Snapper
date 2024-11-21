@@ -21,13 +21,13 @@ jobs:
           node-version: '18'
           cache: npm
       
-      # Create Docusaurus project structure
-      - name: Prepare Docusaurus Directory
+      # Prepare Docusaurus project
+      - name: Prepare Docusaurus Project
         run: |
           mkdir -p docusaurus-site/docs
           mkdir -p docusaurus-site/src/css
       
-      # Create Docusaurus configuration files
+      # Create project files
       - name: Create Docusaurus Configuration
         working-directory: docusaurus-site
         run: |
@@ -44,21 +44,22 @@ jobs:
           }
           EOL
 
-          # Create docusaurus.config.js
+          # Create docusaurus.config.js (using the configuration from previous artifact)
           cat > docusaurus.config.js << 'EOL'
           const { themes } = require('prism-react-renderer');
 
           module.exports = {
             title: 'Snapper',
             tagline: 'Snapper Documentation',
-            url: 'https://asifqatar.github.io/Snapper',
-            baseUrl: '/',
+            url: 'https://asifqatar.github.io',
+            baseUrl: '/Snapper/',
             trailingSlash: false,
             onBrokenLinks: 'throw',
             onBrokenMarkdownLinks: 'warn',
             favicon: 'https://avatars.githubusercontent.com/u/105142204?s=48&v=4',
             organizationName: 'asifqatar',
             projectName: 'Snapper',
+            deploymentBranch: 'gh-pages',
             presets: [
               [
                 '@docusaurus/preset-classic',
@@ -66,11 +67,11 @@ jobs:
                   docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
                     routeBasePath: '/',
-                    editUrl: 'https://github.com/sayfer-io/Snapper/blob/main/',
+                    editUrl: 'https://github.com/asifqatar/Snapper/blob/main/',
                   },
                   blog: {
                     showReadingTime: true,
-                    editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/blog/',
+                    editUrl: 'https://github.com/asifqatar/Snapper/edit/main/blog/',
                   },
                   theme: {
                     customCss: require.resolve('./src/css/custom.css'),
