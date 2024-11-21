@@ -31,10 +31,22 @@ jobs:
       - name: Create Docusaurus Configuration
         working-directory: docusaurus-site
         run: |
+          # Create package.json
+          cat > package.json << 'EOL'
+          {
+            "name": "snapper-docs",
+            "version": "1.0.0",
+            "private": true,
+            "scripts": {
+              "start": "docusaurus start",
+              "build": "docusaurus build"
+            }
+          }
+          EOL
+
           # Create docusaurus.config.js
           cat > docusaurus.config.js << 'EOL'
-          const lightCodeTheme = require('prism-react-renderer/themes/github');
-          const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+          const { themes } = require('prism-react-renderer');
 
           module.exports = {
             title: 'Snapper',
@@ -83,8 +95,8 @@ jobs:
                 ],
               },
               prism: {
-                theme: lightCodeTheme,
-                darkTheme: darkCodeTheme,
+                theme: themes.github,
+                darkTheme: themes.dracula,
               },
             },
           };
@@ -112,7 +124,6 @@ jobs:
       - name: Install Docusaurus Dependencies
         working-directory: docusaurus-site
         run: |
-          npm init -y
           npm install @docusaurus/core @docusaurus/preset-classic @docusaurus/theme-classic prism-react-renderer
       
       # Build Docusaurus site
