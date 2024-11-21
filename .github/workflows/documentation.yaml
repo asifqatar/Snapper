@@ -137,7 +137,7 @@ jobs:
       # Generate API Documentation using TypeDoc
       - name: Generate API Documentation with TypeDoc
         working-directory: docusaurus-site
-        run: npm run typedoc
+        run: npm run docs
 
       # Build Docusaurus site
       - name: Build Docusaurus Documentation
