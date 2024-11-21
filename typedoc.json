@@ -9,5 +9,10 @@
     "**/temp/**",
     "**/localtests/**"
   ],
-  "plugin": ["typedoc-plugin-markdown"]
+  "plugin": ["typedoc-plugin-markdown"],
+  "hideBreadcrumbs": true,
+  "includeVersion": true,
+  "hideGenerator": true,
+  "excludePrivate": true,
+  "readme": "none"
 }

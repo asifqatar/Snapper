@@ -39,7 +39,9 @@ jobs:
             "private": true,
             "scripts": {
               "start": "docusaurus start",
-              "build": "docusaurus build"
+              "build": "docusaurus build",
+              "docs": "cp -r docs/* build/",  # Add script to copy docs into build folder
+              "typedoc": "npx typedoc --options ../typedoc.json"  # TypeDoc generation command
             }
           }
           EOL
@@ -122,25 +124,21 @@ jobs:
           echo "# Introduction to Snapper" > docs/intro.md
       
       # Install dependencies
-      - name: Install Docusaurus Dependencies
+      - name: Install Docusaurus and TypeDoc Dependencies
         working-directory: docusaurus-site
         run: |
           npm install @docusaurus/core @docusaurus/preset-classic @docusaurus/theme-classic prism-react-renderer
+          npm install --save-dev typedoc typedoc-plugin-markdown
+      
+      # Generate API Documentation using TypeDoc
+      - name: Generate API Documentation with TypeDoc
+        run: |
+          npm run typedoc  # Runs TypeDoc and generates API docs in docs/API folder
       
       # Build Docusaurus site
       - name: Build Docusaurus Documentation
         working-directory: docusaurus-site
         run: npx docusaurus build
-     
-      # Generate API Documentation using TypeDoc
-      - name: Generate API Documentation with TypeDoc
-        run: |
-          npm run docs
-      
-      # Copy docs into the build folder after build
-      - name: Copy Docs to Build Folder
-        working-directory: docusaurus-site
-        run: npm run docs
 
       # Copy generated API docs into the build folder
       - name: Copy API Docs to Build Folder
