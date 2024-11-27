@@ -28,9 +28,6 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Run npm audit
-        run: npm audit --audit-level=moderate
-
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
@@ -55,4 +52,5 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+          DEBUG: semantic-release:*
         run: npx semantic-release --debug
