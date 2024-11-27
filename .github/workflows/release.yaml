@@ -8,9 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      packages: write
 
     steps:
       - name: Checkout code
@@ -19,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "22.3.0"
+          node-version: "22.x"
           cache: "npm"
 
       - name: Install dependencies
@@ -29,7 +26,7 @@ jobs:
         run: npm run build
 
       - name: Run npm audit
-        run: npm audit
+        run: npm audit --audit-level=moderate
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
@@ -44,8 +41,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Download build artifact
         uses: actions/download-artifact@v4
@@ -56,5 +51,5 @@ jobs:
       - name: Semantic Release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
-        run: npx semantic-release
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: npx semantic-release --debug
