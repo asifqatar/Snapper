@@ -1,4 +1,5 @@
 name: Release
+
 on:
   push:
     branches:
@@ -11,17 +12,29 @@ jobs:
       contents: write
       issues: write
       pull-requests: write
+
     steps:
+      # Checkout the code with full history for semantic-release
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          token: ${{ secrets.PAT_TOKEN }}
+
+      # Setup Node.js environment
       - uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
+          cache: 'npm'
+
+      # Install dependencies
       - run: npm ci
+
+      # Optional: Build the project (if required for npm package or docs generation)
       - run: npm run build
+
+      # Optional: Run security audit (can be skipped if not necessary)
       - run: npm audit signatures
+
+      # Run semantic-release to publish
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
